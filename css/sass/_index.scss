@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: DM Sans, sans-serif;
+  .banner{
+    width: 75%;
+    // height: 100px;
+    padding: 40px 0px 40px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @include mobile{
+      width: 100%;
+      padding: 40px 25px;
+    }
+    @include tablet{
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .logo{
+      width: 200px;
+      height: 50px;
+      @include mobile{
+        width: 150px;
+        height: 37px;
+      }
+      @include tablet{
+        align-items: center;
+      }
+    }
+    nav{
+      @include mobile{
+        margin: 25px auto;
+      }
+      @include tablet{
+        margin: 25px auto;
+      }
+      .scroll-up{
+        position: absolute;
+        text-decoration: none;
+        top: 20px;
+        left: 50%;
+        color: #000;
+        background-color: $secondaire;
+        padding: 3px 5px;
+        border-radius: 5px;
+        display: none;
+      }
+      .tags{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        }
+    }
+    
+    }
+    main{
+      width: 98%;
+      height: 200px;
+      margin: auto;
+    .heading{
+      position: absolute;
+      left: 1150px;
+      top:55px;
+      font-size:20px;
+      color: $primaire;
+      font-weight: 100;
+      @include mobile{
+        font-size: 15px;
+        left: 60%;
+        top: 50px;
+      }
+      @include tablet{
+        left: 70%;
+        top: 50px;
+      }
+    }
+    .photographes{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 50px 20px; 
+      .photographer{
+        width: calc(100% / 3);
+        text-align: center;
+        padding-top: 30px;
+      a{
+        text-decoration: none;
+        img{
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      .photographer-name{
+        color: #D25D44;
+        line-height: 46px;
+        font-weight: 100;
+        margin-top: 5px;
+        font-size: 36px;
+      }
+      }
+      .city{
+        display: block;
+        color: $primaire;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 17px;
+      }
+      .desc{
+        display: block;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 13px;
+      }
+      .price{
+        display: block;
+        font-weight: 400;
+        font-size: 9px;
+        line-height: 12px;
+        color: #999999;
+      }
+      .tags{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      }
+    }
+    }  
+  }
+
