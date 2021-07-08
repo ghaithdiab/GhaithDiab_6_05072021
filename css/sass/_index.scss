@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -84,11 +84,20 @@ body{
     .photographes{
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
       padding: 50px 20px; 
       .photographer{
         width: calc(100% / 3);
         text-align: center;
         padding-top: 30px;
+        @include mobile{
+          width: auto;
+        }
+        @include tablet{
+          width: auto;
+          margin: 20px;
+        }
       a{
         text-decoration: none;
         img{

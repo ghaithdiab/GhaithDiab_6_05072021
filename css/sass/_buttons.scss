@@ -1,0 +1,29 @@
+.btn{
+  width: 170px;
+  height: 69px;
+  border:1px solid $primaire;
+  border-radius: 5px;
+  background: $primaire;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  @include mobile{
+    position: fixed;
+    bottom: 40px;
+    left:30%;
+    height: 35px;
+  }
+  @include tablet{
+    position: fixed;
+    bottom: 40px;
+    left: 40%;
+    height: 35px;
+  }
+  &:hover{
+    background: $secondaire;
+    color: #000;
+    border:1px solid $secondaire;
+  }
+}

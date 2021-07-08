@@ -1,7 +1,7 @@
 /*------start varibles breaking points---------*/
 /*-----------varibles colors-------*/
 /*------start mixin breaking points---------*/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 .tags-item {
   padding: 0px 5px;
   border: .5px solid #DBDBDB;
@@ -118,7 +118,7 @@ body .banner nav .scroll-up {
   top: 20px;
   left: 50%;
   color: #000;
-  background-color: #DB8876;
+  background-color: #D3573C;
   padding: 3px 5px;
   border-radius: 5px;
   display: none;
@@ -171,6 +171,12 @@ body main .photographes {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 50px 20px;
 }
 
@@ -178,6 +184,19 @@ body main .photographes .photographer {
   width: calc(100% / 3);
   text-align: center;
   padding-top: 30px;
+}
+
+@media (max-width: 767px) {
+  body main .photographes .photographer {
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body main .photographes .photographer {
+    width: auto;
+    margin: 20px;
+  }
 }
 
 body main .photographes .photographer a {
