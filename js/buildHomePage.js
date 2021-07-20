@@ -1,0 +1,5 @@
+class buildHomePage{
+  
+}
+
+export {buildHomePage};

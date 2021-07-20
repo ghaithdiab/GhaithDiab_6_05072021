@@ -6,21 +6,23 @@
   margin-right: 10px;
   list-style: none;
   text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: $primaire;
+  font-weight: 500;
+  padding: 5px;
   @include mobile{
     margin-top: 8px;
   }
-  .fliter-tag{
-    font-size: 12px;
-    text-decoration: none;
-    color: $primaire;
-    font-weight: 500;
-
-}
+  &.selected{
+    background: $primaire;
+    border-color: $primaire;
+    color: #fff;
+  }
 &:hover{
   background: $primaire;
   border-color: $primaire;
-  .fliter-tag{
-    color: #fff;
-  }
+  color: #fff;
 }
+
 }

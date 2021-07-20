@@ -9,6 +9,11 @@
   margin-right: 10px;
   list-style: none;
   text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #901c1c;
+  font-weight: 500;
+  padding: 5px;
 }
 
 @media (max-width: 767px) {
@@ -17,19 +22,15 @@
   }
 }
 
-.tags-item .fliter-tag {
-  font-size: 12px;
-  text-decoration: none;
-  color: #901c1c;
-  font-weight: 500;
+.tags-item.selected {
+  background: #901c1c;
+  border-color: #901c1c;
+  color: #fff;
 }
 
 .tags-item:hover {
   background: #901c1c;
   border-color: #901c1c;
-}
-
-.tags-item:hover .fliter-tag {
   color: #fff;
 }
 
