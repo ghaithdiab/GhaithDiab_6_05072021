@@ -3,9 +3,9 @@
 /*------start mixin breaking points---------*/
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 .tags-item {
-  padding: 0px 5px;
-  border: .5px solid #DBDBDB;
-  border-radius: 20px;
+  padding: 3px 5px;
+  border: .5px solid #C4C4C4;
+  border-radius: 11px;
   margin-right: 10px;
   list-style: none;
   text-align: center;
@@ -13,7 +13,6 @@
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
-  padding: 5px;
 }
 
 @media (max-width: 767px) {
@@ -43,10 +42,12 @@
 
 body {
   font-family: DM Sans, sans-serif;
+  width: 95%;
+  margin: auto;
 }
 
 body .banner {
-  width: 75%;
+  width: 1000px;
   padding: 40px 0px 40px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -132,19 +133,23 @@ body .banner nav .tags {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  body .banner nav .tags {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 body main {
   width: 98%;
-  height: 200px;
   margin: auto;
 }
 
 body main .heading {
   position: absolute;
-  left: 1150px;
+  left: 1200px;
   top: 55px;
   font-size: 20px;
   color: #901c1c;
@@ -213,10 +218,10 @@ body main .photographes .photographer a img {
 }
 
 body main .photographes .photographer a .photographer-name {
-  color: #D25D44;
+  color: #D3573C;
   line-height: 46px;
-  font-weight: 100;
-  margin-top: 5px;
+  font-weight: 400;
+  margin-top: 20px;
   font-size: 36px;
 }
 
@@ -233,6 +238,7 @@ body main .photographes .photographer .desc {
   font-weight: 400;
   font-size: 10px;
   line-height: 13px;
+  margin-top: 2px;
 }
 
 body main .photographes .photographer .price {
@@ -240,7 +246,8 @@ body main .photographes .photographer .price {
   font-weight: 400;
   font-size: 9px;
   line-height: 12px;
-  color: #999999;
+  color: #757575;
+  margin-top: 5px;
 }
 
 body main .photographes .photographer .tags {

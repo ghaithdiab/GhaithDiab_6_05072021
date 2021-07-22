@@ -6,13 +6,14 @@
 }
 body{
   font-family: DM Sans, sans-serif;
+    width: 95%;
+    margin: auto;
   .banner{
-    width: 75%;
-    // height: 100px;
+    width: 1000px;
     padding: 40px 0px 40px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
     flex-wrap: wrap;
     @include mobile{
       width: 100%;
@@ -55,18 +56,19 @@ body{
       .tags{
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        @include mobile{
+          flex-wrap: wrap;
+        }
         }
     }
     
     }
     main{
       width: 98%;
-      height: 200px;
       margin: auto;
     .heading{
       position: absolute;
-      left: 1150px;
+      left: 1200px;
       top:55px;
       font-size:20px;
       color: $primaire;
@@ -107,10 +109,10 @@ body{
           object-fit: cover;
         }
       .photographer-name{
-        color: #D25D44;
+        color:  #D3573C;
         line-height: 46px;
-        font-weight: 100;
-        margin-top: 5px;
+        font-weight: 400;
+        margin-top: 20px;
         font-size: 36px;
       }
       }
@@ -126,13 +128,15 @@ body{
         font-weight: 400;
         font-size: 10px;
         line-height: 13px;
+        margin-top: 2px;
       }
       .price{
         display: block;
         font-weight: 400;
         font-size: 9px;
         line-height: 12px;
-        color: #999999;
+        color: #757575;
+        margin-top: 5px;
       }
       .tags{
         margin-top: 10px;

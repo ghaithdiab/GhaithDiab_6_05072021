@@ -1,8 +1,8 @@
 
 .tags-item{
-  padding: 0px 5px;
-  border: .5px solid #DBDBDB;
-  border-radius: 20px;
+  padding: 3px 5px;
+  border: .5px solid #C4C4C4;
+  border-radius: 11px;
   margin-right: 10px;
   list-style: none;
   text-align: center;
@@ -10,7 +10,6 @@
   cursor: pointer;
   color: $primaire;
   font-weight: 500;
-  padding: 5px;
   @include mobile{
     margin-top: 8px;
   }
