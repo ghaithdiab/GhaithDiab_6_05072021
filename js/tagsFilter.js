@@ -1,37 +1,31 @@
 
 
 
-  let tagsSelected= new Array();
-  document.querySelector('.tags').onclick=(event)=>{
-    const name = event.target.dataset.name;
-    if(event.target.className==="tags-item"){
-      event.target.className+=" selected";
-      tagsSelected.push(name);
-      // console.log(tagsSelected);
-      getPhotographers(tagsSelected);
-    }else{
-      event.target.className="tags-item";
-      tagsSelected.splice(tagsSelected.indexOf(name),1);
-      getPhotographers(tagsSelected);
-      // console.log(tagsSelected);
+import photographerElt from './PhotographerElt.js';
+import {tagsSelected} from './index.js';
+let photograherToDisplay=new Array();
+
+
+let getPhotographers=()=>{
+  photograherToDisplay=[];
+    for(let i in dataJson.photographers){
+      if(tagsSelected.length==0){
+        photograherToDisplay.push(dataJson.photographers[i]);
+      }else if(tagsSelected.every(item=>dataJson.photographers[i].tags.includes(item))){
+        photograherToDisplay.push(dataJson.photographers[i]);
+      }
     }
-  }
-
-
-const getPhotographers=(arr1)=>{
-  fetch('js/data.json')
-.then((response)=> response.json())
-.then((data)=>{
-  for(let i in data.photographers){
-    // console.log(data.photographers[i].tags.some(item=>arr1.includes(item)));
-    if(data.photographers[i].tags.some(item=>arr1.includes(item))){
-      const photographers=data.photographers[i];
-      
-    }
-  }
-
-});
-
+    
+    return photograherToDisplay;
+    // photograherToDisplay.forEach(element => {
+    //   let createphoto=new photographerElt(`./media/PhotographersIDPhotos/${element.portrait}`,
+    //   element.name,
+    //   element.country,
+    //   element.city,
+    //   element.tagline,
+    //   element.price,
+    //   element.tags);
+    //   createphoto.buildPhotographerElt();
+    // });
 }
-
-export {tagsSelected ,getPhotographers};
+export { getPhotographers};
