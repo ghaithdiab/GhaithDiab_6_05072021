@@ -43,15 +43,24 @@ body{
         margin: 25px auto;
       }
       .scroll-up{
-        position: absolute;
+        position: fixed;
         text-decoration: none;
         top: 20px;
-        left: 50%;
+        left: 45%;
         color: #000;
-        background-color: $secondaire;
+        background-color: #DB8876;
         padding: 3px 5px;
         border-radius: 5px;
+        font-size: 18px;
+        font-weight: 700;
         display: none;
+        @include mobile{
+          top:2px;
+          left: 30%;
+        }
+        @include tablet{
+          left: 40%;
+        }
       }
       .tags{
         display: flex;

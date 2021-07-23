@@ -34,4 +34,21 @@ document.querySelector('.tags').onclick=(event)=>{
     tagsSelected.splice(tagsSelected.indexOf(name),1);
     buildSectionElt(getPhotographers());
 }}
+
+const scrollUp=document.querySelector('.scroll-up');
+
+
+const scrollFunction=()=>{
+  if(document.body.scrollTop>20||document.documentElement.scrollTop>20){
+    scrollUp.style.display="block";
+  }else{
+    scrollUp.style.display="none";
+  }
+}
+const topfunction=()=>{
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop=0;
+}
+document.addEventListener('scroll', scrollFunction);
+scrollUp.addEventListener('click',(e)=>{e.preventDefault();topfunction();})
 export {tagsSelected};

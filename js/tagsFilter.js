@@ -1,6 +1,3 @@
-
-
-
 import photographerElt from './PhotographerElt.js';
 import {tagsSelected} from './index.js';
 import dataJson from './fetchData.js'
