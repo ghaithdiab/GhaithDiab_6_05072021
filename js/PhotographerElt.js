@@ -1,6 +1,7 @@
 import {creatEltWithClassName,creatimgElt,creatLinkElt} from './createElt.js';
 class photographerElt{
-  constructor(photoId,name,country,city,tageLine,price,tags){
+  constructor(idPhotographer,photoId,name,country,city,tageLine,price,tags){
+    this.idPhotographer=idPhotographer;
     this.photoId=photoId;
     this.name=name;
     this.country=country;
@@ -13,7 +14,8 @@ class photographerElt{
     const sectionPhotographer=document.querySelector(".photographes");
     const artPhotographer= creatEltWithClassName("article","photographer");
     sectionPhotographer.appendChild(artPhotographer);
-    const linkPhotographer=creatLinkElt("photographer.html","linkPhotographer");
+    const linkPhotographer=creatLinkElt(`photographer.html?id=${this.idPhotographer}`,"linkPhotographer");
+    linkPhotographer.setAttribute("data-id",this.idPhotographer);
     artPhotographer.appendChild(linkPhotographer);
     const photoPhotographer=creatimgElt(this.photoId,this.name,"IdPhoto");
     linkPhotographer.appendChild(photoPhotographer);

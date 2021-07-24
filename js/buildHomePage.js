@@ -1,5 +1,0 @@
-class buildHomePage{
-  
-}
-
-export {buildHomePage};

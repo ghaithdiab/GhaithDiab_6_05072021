@@ -1,5 +1,5 @@
 
-import dataJson from './fetchData.js';
+// import dataJson from './fetchData.js';
 import { getPhotographers } from './tagsfilter.js';
 import photographerElt from './PhotographerElt.js';
 let tagsSelected= new Array();
@@ -10,7 +10,7 @@ const buildSectionElt=(arr)=>{
         sectionPhotographer.firstChild.remove()
       }
       arr.forEach(element => {
-      let createphoto=new photographerElt(`./media/PhotographersIDPhotos/${element.portrait}`,
+      let createphoto=new photographerElt(element.id,`./media/PhotographersIDPhotos/${element.portrait}`,
       element.name,
       element.country,
       element.city,
@@ -50,5 +50,10 @@ const topfunction=()=>{
   document.documentElement.scrollTop=0;
 }
 document.addEventListener('scroll', scrollFunction);
-scrollUp.addEventListener('click',(e)=>{e.preventDefault();topfunction();})
+scrollUp.addEventListener('click',(e)=>{e.preventDefault();topfunction();});
+
+
+
+
 export {tagsSelected};
+
