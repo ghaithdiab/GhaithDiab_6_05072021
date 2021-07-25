@@ -1,6 +1,6 @@
 
 // import dataJson from './fetchData.js';
-import { getPhotographers } from './tagsfilter.js';
+import { getPhotographers } from './filterForTags.js';
 import photographerElt from './PhotographerElt.js';
 let tagsSelected= new Array();
 
