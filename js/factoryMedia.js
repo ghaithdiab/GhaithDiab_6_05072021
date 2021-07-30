@@ -3,14 +3,14 @@ class imageFactory{
   constructor(props){
     this.src=props.image;
     this.alt=props.alt;
-    this.elt=creatimgElt(`/media/imges/${this.src}`,`${this.alt} ,closeup view`,"item");
+    this.elt=creatimgElt(`./media/imges/${this.src}`,`${this.alt} ,closeup view`,"item");
     return this.elt;
   }
 }
 class videoFactory{
   constructor(props){
     this.src=props.video;
-    this.elt=creatVideoElt(`/media/imges/${this.src}`, "item");
+    this.elt=creatVideoElt(`./media/imges/${this.src}`, "item");
     return this.elt;
   }
 }

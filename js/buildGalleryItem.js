@@ -6,6 +6,7 @@ class buildGalleryItem{
     this.type=type;
     this.like=props.likes;
     this.title=props.title;
+    this.id=props.id;
   }
   buildItem=()=>{
     const section=document.querySelector(".gallery");
@@ -18,7 +19,8 @@ class buildGalleryItem{
     const infoMedia=creatEltWithClassName('div',"info-item");
     const titleMedia=creatEltWithClassName("h2","title");
     titleMedia.innerText= this.title;
-    const likeimage=creatimgElt("/media/heart-solid.svg", "likes", "likes");
+    const likeimage=creatimgElt("./media/heart-solid.svg", "likes", "likes");
+    likeimage.setAttribute("data-id",this.id);
     const numberOfLikes=creatEltWithClassName("span", "numberOflikes");
     numberOfLikes.innerText=this.like;
     infoMedia.appendChild(titleMedia);

@@ -5,8 +5,8 @@ import buildGalleryItem from "./buildGalleryItem.js";
 
   const url=new URL(window.location.href);
   const idphotographer=url.searchParams.get("id");
-const getPhotographerInfo=()=>{
   const photographer=dataJson.photographers.find(x=>x.id==idphotographer);
+const getPhotographerInfo=()=>{
   document.querySelector('.photographer-name').innerText=photographer.name;
   document.querySelector('.city').innerText=`${photographer.city},${photographer.country}`;
   document.querySelector('.desc').innerText=photographer.tagline;
@@ -17,7 +17,7 @@ const getPhotographerInfo=()=>{
     tagItem.innerText=`#${element}`;
   });
   const imgPhotographer=document.querySelector('.user');
-  imgPhotographer.setAttribute("src",`/media/PhotographersIDPhotos/${photographer.portrait}`);
+  imgPhotographer.setAttribute("src",`./media/PhotographersIDPhotos/${photographer.portrait}`);
   imgPhotographer.setAttribute("alt", photographer.name);
 }
 
@@ -63,3 +63,24 @@ orderByList.onclick=(event)=>{
   
 }
 
+
+const totalLikes=document.querySelector('.total-likes');
+const likebtn=document.querySelectorAll('.likes');
+const price=document.querySelector('.price');
+let likesSum=0;
+phototgrapherMedia.forEach(element=>{
+  likesSum+=element.likes;
+});
+totalLikes.innerText=likesSum;
+
+
+likebtn.forEach(element=>{
+  element.addEventListener('click',()=>{
+    let mediaID=element.dataset.id;
+    const mediaElt=dataJson.media.find(x=>x.id==mediaID);
+    mediaElt.likes++;
+    totalLikes.innerText++;
+    element.previousSibling.innerText=mediaElt.likes;
+  })
+})
+price.innerText=`${photographer.price}€/jour`;

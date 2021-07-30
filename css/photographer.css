@@ -386,7 +386,16 @@ body .data {
 
 body .data span {
   margin: 30px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
+}
+
+body .data span svg {
+  width: 25px;
+  height: 25px;
+}
+
+body .data span svg path {
+  fill: #000;
 }
 /*# sourceMappingURL=photographer.css.map */

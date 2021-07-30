@@ -224,12 +224,16 @@ body{
         border-top-left-radius: 5px;
         span{
           margin: 30px;
-          font-weight: 400;
+          font-weight: 500;
           font-size: 24px;
-          // i{
-          //   height: 20px;
-          //   width: 20px;
-          // }
+          svg{
+            width: 25px;
+            height: 25px;
+            path{
+              fill: #000;
+            }
+          }
         }
+
       }
   }
