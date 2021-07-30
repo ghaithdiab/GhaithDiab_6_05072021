@@ -19,4 +19,17 @@ const creatLinkElt=(hrefLink,className)=>{
   return elt;
 }
 
-export {creatEltWithClassName,creatimgElt,creatLinkElt};
+const creatVideoElt=(srcVideo,className)=>{
+  const elt=document.createElement("video");
+  // elt.setAttribute("controls");
+  elt.classList.add(className);
+  elt.setAttribute("preload","metadata");
+  const sourcElt=document.createElement("source");
+  sourcElt.setAttribute("src",`${srcVideo}#t=0.1`);
+  sourcElt.setAttribute("type","video/mp4");
+
+  elt.appendChild(sourcElt);
+  return elt;
+}
+
+export {creatEltWithClassName,creatimgElt,creatLinkElt,creatVideoElt};

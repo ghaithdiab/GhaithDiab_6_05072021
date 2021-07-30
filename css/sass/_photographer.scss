@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body{
-  // font-family:  DM Sans, sans-serif;
+  font-family:  DM Sans, sans-serif;
   .banner{
     padding: 40px 0px 40px 40px;
     .logo{
@@ -89,11 +89,15 @@ body{
     width: 90%;
     margin: auto;
     margin-top: 25px;
+    display: flex;
     .sort-label{
       font-weight: 700;
       font-size: 18px;
       margin-right: 20px;
-      
+      margin-top: 10px;
+    @include mobile{
+      display: none;
+    } 
     }
     .sort-btn{
     width: 165px;
@@ -106,20 +110,32 @@ body{
     border-radius: 5px;
     color: #fff;
     outline: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     svg{
       width: 20px;
       height: 20px;
       margin-left: 20px;
+      padding-top: 5px;
+    }
+    &:hover{
+      background-color:#651414 ;
+    }
+    @include mobile{
+      display: none;
     }
     }
     .sort-list{
       position: absolute;
-      left: 145px;
+      left: 169px;
       top: 440px;
       list-style: none;
       width: 166px;
       border-radius: 5px;
       display: none;
+      z-index: 1000;
       .sort-item{
         background-color: $primaire;
         padding: 20px;
@@ -162,29 +178,37 @@ body{
       .gallery-item{
         width: 350px;
         margin-top: 30px;
-        a{
+        .linksourc{
           .item{
             width: 350px;
             height: 300px;
             border-radius: 5px;
+            object-fit: cover;
           }
         }
         }
         .info-item{
           display: flex;
-          justify-content: space-between;
           width: 100%;
+          // justify-content: stretch;
         }
         h2{
           font-weight: 400;
           font-size: 24px;
           color: $primaire;
+          margin-right: auto;
         }
         .likes{
-          width: 20px;
-          height: 20px;
-          float: right;
+          width: 24px;
+          height: 24px;
           cursor: pointer;
+          margin-left:5px ;
+          margin-top: 2px;
+
+        }
+        .numberOflikes{
+          color: $primaire;
+          font-size: 24px;
         }
       }
       .data{

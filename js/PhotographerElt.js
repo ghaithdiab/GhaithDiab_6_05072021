@@ -12,16 +12,23 @@ class photographerElt{
   }
   buildPhotographerElt(){
     const sectionPhotographer=document.querySelector(".photographes");
+
     const artPhotographer= creatEltWithClassName("article","photographer");
+
     sectionPhotographer.appendChild(artPhotographer);
     const linkPhotographer=creatLinkElt(`photographer.html?id=${this.idPhotographer}`,"linkPhotographer");
+
     linkPhotographer.setAttribute("data-id",this.idPhotographer);
+
     artPhotographer.appendChild(linkPhotographer);
     const photoPhotographer=creatimgElt(this.photoId,this.name,"IdPhoto");
+
     linkPhotographer.appendChild(photoPhotographer);
     const NamePhotographer=creatEltWithClassName("h2","photographer-name");
+
     NamePhotographer.innerText=this.name;
     linkPhotographer.appendChild(NamePhotographer);
+    
     const infoPhotographer=creatEltWithClassName("p","info");
     artPhotographer.appendChild(infoPhotographer);
     const cityPhotographer=creatEltWithClassName("span","city");

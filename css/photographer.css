@@ -77,6 +77,10 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: DM Sans, sans-serif;
+}
+
 body .banner {
   padding: 40px 0px 40px 40px;
 }
@@ -201,12 +205,22 @@ body .sort-by {
   width: 90%;
   margin: auto;
   margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body .sort-by .sort-label {
   font-weight: 700;
   font-size: 18px;
   margin-right: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  body .sort-by .sort-label {
+    display: none;
+  }
 }
 
 body .sort-by .sort-btn {
@@ -220,22 +234,44 @@ body .sort-by .sort-btn {
   border-radius: 5px;
   color: #fff;
   outline: none;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .sort-by .sort-btn svg {
   width: 20px;
   height: 20px;
   margin-left: 20px;
+  padding-top: 5px;
+}
+
+body .sort-by .sort-btn:hover {
+  background-color: #651414;
+}
+
+@media (max-width: 767px) {
+  body .sort-by .sort-btn {
+    display: none;
+  }
 }
 
 body .sort-by .sort-list {
   position: absolute;
-  left: 145px;
+  left: 169px;
   top: 440px;
   list-style: none;
   width: 166px;
   border-radius: 5px;
   display: none;
+  z-index: 1000;
 }
 
 body .sort-by .sort-list .sort-item {
@@ -296,19 +332,18 @@ body .gallery .gallery-item {
   margin-top: 30px;
 }
 
-body .gallery .gallery-item a .item {
+body .gallery .gallery-item .linksourc .item {
   width: 350px;
   height: 300px;
   border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .gallery .info-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
 }
 
@@ -316,13 +351,20 @@ body .gallery h2 {
   font-weight: 400;
   font-size: 24px;
   color: #901c1c;
+  margin-right: auto;
 }
 
 body .gallery .likes {
-  width: 20px;
-  height: 20px;
-  float: right;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+body .gallery .numberOflikes {
+  color: #901c1c;
+  font-size: 24px;
 }
 
 body .data {

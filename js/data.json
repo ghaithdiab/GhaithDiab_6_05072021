@@ -90,6 +90,7 @@
         "photographerId":82,
         "title":"Fashion Yellow Beach",
         "image":"Fashion_Yellow_Beach.jpg",
+        "alt": "Fashion Yellow Beach",
         "tags":[
           "fashion"
         ],
@@ -102,6 +103,7 @@
         "photographerId":82,
         "title":"Fashion Urban Jungle",
         "image":"Fashion_Urban_Jungle.jpg",
+        "alt":"Fashion Urban Jungle",
         "tags":[
           "fashion"
         ],
@@ -114,6 +116,7 @@
         "photographerId":82,
         "title":"Fashion Pattern on a Pattern",
         "image":"Fashion_Pattern_on_Pattern.jpg",
+        "alt":"Fashion Pattern on a Pattern",
         "tags":[
           "fashion"
         ],
@@ -125,7 +128,8 @@
         "id":9275938,
         "photographerId":82,
         "title":"Wedding Gazebo",
-        "image":"Event-_WeddingGazebo.jpg",
+        "image":"Event_WeddingGazebo.jpg",
+        "alt":"Event WeddingGazebo",
         "tags":[
           "events"
         ],
@@ -138,6 +142,7 @@
         "photographerId":82,
         "title":"Sparkles",
         "image":"Event_Sparklers.jpg",
+        "alt":"Event Sparklers",
         "tags":[
           "events"
         ],
@@ -148,8 +153,9 @@
     {
         "id":7324238,
         "photographerId":82,
-        "title":"18th Anniversary",
+        "title":" Event 18th Anniversary",
         "image":"Event_18thAnniversary.jpg",
+        "alt":"Event 18thAnniversary",
         "tags":[
           "events"
         ],
@@ -174,6 +180,7 @@
         "photographerId":82,
         "title":"Triangle Man",
         "image":"Art_Triangle_Man.jpg",
+        "alt":"Art Triangle",
         "tags":[
           "art"
         ],
@@ -186,6 +193,7 @@
         "photographerId":82,
         "title":"Purple Tunnel",
         "image":"Art_Purple_light.jpg",
+        "alt" :"Art Purple light",
         "tags":[
           "art"
         ],
@@ -198,6 +206,7 @@
         "photographerId":82,
         "title":"Art Mine",
         "image":"Art_Mine.jpg",
+        "alt":"Art Mine",
         "tags":[
           "art"
         ],
@@ -208,8 +217,9 @@
     {
         "id":73852953,
         "photographerId":925,
-        "title":"8 Rows",
+        "title":"Sport 2000 with 8 Rows",
         "image":"Sport_2000_with_8.jpg",
+        "alt":"Sport 2000 with 8",
         "tags":[
           "sport"
         ],
@@ -222,6 +232,7 @@
         "photographerId":925,
         "title":"Fashion Wings",
         "image":"Fashion_Wings.jpg",
+        "alt":"Fashion Wings",
         "tags":[
           "fashion"
         ],
@@ -234,6 +245,7 @@
         "photographerId":925,
         "title":"Melody Red on Stripes",
         "image":"Fashion_Melody_Red_on_Stripes.jpg",
+        "alt":"fashion Melody Red On stripes",
         "tags":[
           "fashion"
         ],
@@ -246,6 +258,7 @@
         "photographerId":925,
         "title":"Venture Conference",
         "image":"Event_VentureConference.jpg",
+        "alt":"Event Venrure Confeerence",
         "tags":[
           "events"
         ],
@@ -258,6 +271,7 @@
         "photographerId":925,
         "title":"Product Pitch",
         "image":"Event_ProductPitch.jpg",
+        "alt":"Event Product Pitch",
         "tags":[
           "events"
         ],
@@ -270,6 +284,7 @@
         "photographerId":925,
         "title":"Musical Festival Keyboard",
         "image":"Event_KeyboardCheck.jpg",
+        "alt":"Event Keyboard Check",
         "tags":[
           "events"
         ],
@@ -282,6 +297,7 @@
         "photographerId":925,
         "title":"Musical Festival Singer",
         "image":"Event_Emcee.jpg",
+        "alt":"Event Emcee",
         "tags":[
           "events"
         ],
@@ -294,6 +310,7 @@
         "photographerId":925,
         "title":"Animal Majesty",
         "image":"Animals_Majesty.jpg",
+        "alt":"Animals Majesty",
         "tags":[
           "animals"
         ],
@@ -330,6 +347,7 @@
         "photographerId":527,
         "title":"Outdoor Baths",
         "image":"Travel_Outdoor_Baths.jpg",
+        "alt":"Travel Outdoor Baths",
         "tags":[
           "travel"
         ],
@@ -342,6 +360,7 @@
         "photographerId":527,
         "title":"Road into the Hill",
         "image":"Travel_Road_into_Hill.jpg",
+        "alt":"Travel Road into Hill",
         "tags":[
           "travel"
         ],
@@ -354,6 +373,7 @@
         "photographerId":527,
         "title":"Bridge into the Forest",
         "image":"Travel_Bridge_into_Forest.jpg",
+        "alt":"Travel Bridge into Forest",
         "tags":[
           "travel"
         ],
@@ -366,6 +386,7 @@
         "photographerId":527,
         "title":"Boat Wonderer",
         "image":"Travel_Boat_Wanderer.jpg",
+        "alt":"Travel Boat Wanderer",
         "tags":[
           "travel"
         ],
@@ -378,6 +399,7 @@
         "photographerId":527,
         "title":"Portrait Sunkiss",
         "image":"Portrait_Sunkissed.jpg",
+        "alt":"Portrait sunkissed",
         "tags":[
           "portrait"
         ],
@@ -390,6 +412,7 @@
         "photographerId":527,
         "title":"Shaw Potrait",
         "image":"Portrait_Shaw.jpg",
+        "alt":"Portrait Shaw",
         "tags":[
           "portait"
         ],
@@ -402,6 +425,7 @@
         "photographerId":527,
         "title":"Alexandra",
         "image":"Portrait_Alexandra.jpg",
+        "alt":"Portrait Alexandra",
         "tags":[
           "portait"
         ],
@@ -414,6 +438,7 @@
         "photographerId":527,
         "title":"Afternoon Break",
         "image":"Portrait_AfternoonBreak.jpg",
+        "alt":"Portrait Afternoon Break",
         "tags":[
           "portait"
         ],
@@ -426,6 +451,7 @@
         "photographerId":243,
         "title":"Lonesome",
         "image":"Travel_Lonesome.jpg",
+        "alt":"Travel Lonesome",
         "tags":[
           "travel"
         ],
@@ -438,6 +464,7 @@
         "photographerId":243,
         "title":"Hillside Color",
         "image":"Travel_HillsideColor.jpg",
+        "alt" :"Travel Hill side color",
         "tags":[
           "travel"
         ],
@@ -450,6 +477,7 @@
         "photographerId":243,
         "title":"Wednesday Potrait",
         "image":"Portrait_Wednesday.jpg",
+        "alt":"Portrait Wednesday",
         "tags":[
           "portait"
         ],
@@ -462,6 +490,7 @@
         "photographerId":243,
         "title":"Nora Portrait",
         "image":"Portrait_Nora.jpg",
+        "alt":"Portrait Nora",
         "tags":[
           "portait"
         ],
@@ -474,6 +503,7 @@
         "photographerId":243,
         "title":"Raw Black Portrait",
         "image":"Portrait_Background.jpg",
+        "alt":"Portrait Background",
         "tags":[
           "portait"
         ],
@@ -486,6 +516,7 @@
         "photographerId":243,
         "title":"Seaside Wedding",
         "image":"Event_SeasideWedding.jpg",
+        "alt":"Event Seaide Wedding",
         "tags":[
           "events"
         ],
@@ -498,6 +529,7 @@
         "photographerId":243,
         "title":"Boulder Wedding",
         "image":"Event_PintoWedding.jpg",
+        "alt":"Event Pinto Wedding",
         "tags":[
           "events"
         ],
@@ -510,6 +542,7 @@
         "photographerId":243,
         "title":"Benevides Wedding",
         "image":"Event_BenevidesWedding.jpg",
+        "alt":"Event BeneVides Wedding",
         "tags":[
           "events"
         ],
@@ -534,6 +567,7 @@
         "photographerId":243,
         "title":"Rainbow Bird",
         "image":"Animals_Rainbow.jpg",
+        "alt":"Animals Rainbow",
         "tags":[
           "animals"
         ],
@@ -546,6 +580,7 @@
         "photographerId":195,
         "title":"Japanese Tower, Kyoto",
         "image":"Travel_Tower.jpg",
+        "alt":"Travel Tower",
         "tags":[
           "travel"
         ],
@@ -558,6 +593,7 @@
         "photographerId":195,
         "title":"Senset on Canals, Venice",
         "image":"Travel_SunsetonCanals.jpg",
+        "alt": "Travel SunsetonCanals",
         "tags":[
           "travel"
         ],
@@ -570,6 +606,7 @@
         "photographerId":195,
         "title":"Mountain and Lake",
         "image":"Travel_OpenMountain.jpg",
+        "alt":"Travel Open Mountain",
         "tags":[
           "travel"
         ],
@@ -582,6 +619,7 @@
         "photographerId":195,
         "title":"City Bike and Stair, Paris",
         "image":"Travel_Bike_and_Stair.jpg",
+        "alt":"Travel Bike and Stair",
         "tags":[
           "travel"
         ],
@@ -594,6 +632,7 @@
         "photographerId":195,
         "title":"Adventure Door, India",
         "image":"Travel_Adventure_Door.jpg",
+        "alt":"Travel Adventure",
         "tags":[
           "travel"
         ],
@@ -606,6 +645,7 @@
         "photographerId":195,
         "title":"Contrast, St Petersburg",
         "image":"Architecture_Contrast.jpg",
+        "alt":"Architecture Contrast",
         "tags":[
           "architecture"
         ],
@@ -618,6 +658,7 @@
         "photographerId":195,
         "title":"On a Hill, Tibet",
         "image":"Architecture_On_a_hill.jpg",
+        "alt":"Architecture On a Hill",
         "tags":[
           "architecture"
         ],
@@ -630,6 +671,7 @@
         "photographerId":195,
         "title":"Leaning Tower, Pisa",
         "image":"Architecture_Dome.jpg",
+        "alt":"Architecture Dome",
         "tags":[
           "architecture"
         ],
@@ -654,6 +696,7 @@
         "photographerId":195,
         "title":"Corner Building and Blue Sky",
         "image":"Architecture_Corner_Room.jpg",
+        "alt":"Architecture Corner Room",
         "tags":[
           "architecture"
         ],
@@ -678,6 +721,7 @@
         "photographerId":930,
         "title":"Climber",
         "image":"Sport_Next_Hold.jpg",
+        "alt":"Sport Next Hold",
         "tags":[
           "sport"
         ],
@@ -690,6 +734,7 @@
         "photographerId":930,
         "title":"Surfer",
         "image":"sport_water_tunnel.jpg",
+        "alt":"sport Water tunnel",
         "tags":[
           "sport"
         ],
@@ -702,6 +747,7 @@
         "photographerId":930,
         "title":"Skier",
         "image":"Sport_Sky_Cross.jpg",
+        "alt":"sport sky cross",
         "tags":[
           "sport"
         ],
@@ -714,6 +760,7 @@
         "photographerId":930,
         "title":"Race End",
         "image":"Sport_Race_End.jpg",
+        "alt":"Sport Race End",
         "tags":[
           "sport"
         ],
@@ -726,6 +773,7 @@
         "photographerId":930,
         "title":"Jump!",
         "image":"Sport_Jump.jpg",
+        "alt":"Sport Jumb",
         "tags":[
           "sport"
         ],
@@ -738,6 +786,7 @@
         "photographerId":930,
         "title":"White Light",
         "image":"Architecture_White_Light.jpg",
+        "alt":"Architercture White Light",
         "tags":[
           "architecture"
         ],
@@ -750,6 +799,7 @@
         "photographerId":930,
         "title":"Water on Modern Building",
         "image":"Architecture_Water_on_Modern.jpg",
+        "alt":"Architecture Water on Modern",
         "tags":[
           "architecture"
         ],
@@ -762,6 +812,7 @@
         "photographerId":930,
         "title":"Horseshoe",
         "image":"Architecture_Horseshoe.jpg",
+        "alt":"Architercture Horseshoe",
         "tags":[
           "architecture"
         ],
@@ -774,6 +825,7 @@
         "photographerId":930,
         "title":"Cross Bar",
         "image":"Architecture_Cross_Bar.jpg",
+        "alt":"Architecture Cross Bar",
         "tags":[
           "architecture"
         ],
@@ -786,6 +838,7 @@
         "photographerId":930,
         "title":"Connected Curves",
         "image":"Architecture_Connected_Curves.jpg",
+        "alt":"Architecture Connected Curves",
         "tags":[
           "architecture"
         ],
