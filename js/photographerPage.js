@@ -84,3 +84,4 @@ likebtn.forEach(element=>{
   })
 })
 price.innerText=`${photographer.price}€/jour`;
+
