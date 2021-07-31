@@ -21,6 +21,7 @@
     bottom: 40px;
     left: 30%;
     height: 35px;
+    z-index: 1;
   }
 }
 
