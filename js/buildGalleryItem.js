@@ -11,7 +11,8 @@ class buildGalleryItem{
   buildItem=()=>{
     const section=document.querySelector(".gallery");
     const galleryItem=creatEltWithClassName('div',"gallery-item");
-    const linkItem= creatLinkElt("#","linksourc");
+    const linkItem= creatLinkElt("#lightBox-modal","linksourc");
+    linkItem.setAttribute("data-id",this.id);
     section.appendChild(galleryItem);
     galleryItem.appendChild(linkItem);
     const media=new mediaFactory(this.props,this.type);

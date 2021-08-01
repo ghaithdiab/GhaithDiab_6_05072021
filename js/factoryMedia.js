@@ -21,7 +21,7 @@ class mediaFactory{
     this.Vsrc=props.video;
     if(type==="image"){
       const imageItem=new imageFactory(props);
-      return imageItem
+      return imageItem;
     }else if(type==="video"){
       const videoItem=new videoFactory(props);
       return videoItem;

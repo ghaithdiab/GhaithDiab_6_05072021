@@ -2,6 +2,7 @@ import dataJson from "./fetchData.js";
 import {creatEltWithClassName,creatimgElt,creatLinkElt,creatVideoElt} from './createElt.js';
 import factoryOrder from "./sortMedia.js";
 import buildGalleryItem from "./buildGalleryItem.js";
+import mediaFactory from "./factoryMedia.js";
 
   const url=new URL(window.location.href);
   const idphotographer=url.searchParams.get("id");
@@ -108,4 +109,38 @@ btnSend.addEventListener('click',(e)=>{
   console.log(`Email : ${allInput[2].value}`);
   console.log(`Message : ${textMessage.value}`);
   formModal.style.display="none";
+})
+
+// light box
+
+const galleryItem=document.querySelectorAll('.item');
+const galleryLink=document.querySelectorAll('.linksourc');
+const lightBox=document.querySelector('#lightBox-modal');
+const containerItem=document.querySelector('.container-gallery')
+
+galleryLink.forEach(element=>{
+  element.addEventListener('click', (event)=>{
+    lightBox.style.display="block";
+    const idItem=element.getAttribute("data-id");
+    const itemElt=dataJson.media.find(x=>x.id==idItem);
+    let type= "image";
+    typeof itemElt.image==="undefined"?type="video":type="image";
+    while(containerItem.firstChild){
+      containerItem.firstChild.remove();
+    }
+    const item=new mediaFactory(itemElt,type);
+    if(type==="video"){
+      item.setAttribute("controls","");
+      item.setAttribute("autoplay","");
+    }
+    item.classList.add("media-Item");
+    containerItem.appendChild(item);
+    const titleItem=creatEltWithClassName("p","title");
+    containerItem.appendChild(titleItem);
+    titleItem.innerText=`${itemElt.title}`;
+  })
+})
+const close=document.querySelector('.close-lightBox');
+close.addEventListener('click', ()=>{
+  lightBox.style.display="none";
 })
