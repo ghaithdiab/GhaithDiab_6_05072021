@@ -364,6 +364,9 @@ body{
           font-size: 24px;
           font-weight: 400;
           margin-top: 5px;
+          @include mobile{
+            left: 10%;
+          }
         }
       }
       .left-side{

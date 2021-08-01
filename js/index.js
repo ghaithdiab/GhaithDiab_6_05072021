@@ -21,12 +21,17 @@ const buildSectionElt=(arr)=>{
     });
 }
 window.onload=buildSectionElt(getPhotographers());
+const listTags=document.querySelectorAll('.tags-item');
 document.querySelector('.tags').onclick=(event)=>{
   
 
   const name = event.target.dataset.name;
   if(event.target.className==="tags-item"){
+    listTags.forEach(element=>{
+      element.classList.remove("selected");
+    })
     event.target.classList.add("selected");
+      tagsSelected.pop();
       tagsSelected.push(name);
       buildSectionElt(getPhotographers());
   }else{

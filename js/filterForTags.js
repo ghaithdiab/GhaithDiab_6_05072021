@@ -9,7 +9,7 @@ const getPhotographers=()=>{
     for(let i in dataJson.photographers){
       if(tagsSelected.length==0){
         photograherToDisplay.push(dataJson.photographers[i]);
-      }else if(tagsSelected.every(item=>dataJson.photographers[i].tags.includes(item))){
+      }else if(tagsSelected.some(item=>dataJson.photographers[i].tags.includes(item))){
         photograherToDisplay.push(dataJson.photographers[i]);
       }
     }
