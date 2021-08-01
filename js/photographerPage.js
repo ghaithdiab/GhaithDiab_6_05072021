@@ -116,7 +116,9 @@ btnSend.addEventListener('click',(e)=>{
 const galleryItem=document.querySelectorAll('.item');
 const galleryLink=document.querySelectorAll('.linksourc');
 const lightBox=document.querySelector('#lightBox-modal');
-const containerItem=document.querySelector('.container-gallery')
+const containerItem=document.querySelector('.container-gallery');
+const btnNext=document.querySelector(".right-side");
+const btnPrivous=document.querySelector(".left-side");
 
 galleryLink.forEach(element=>{
   element.addEventListener('click', (event)=>{
