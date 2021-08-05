@@ -519,7 +519,8 @@ body .lightbox-modal .close-lightBox {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body .lightbox-modal .close-lightBox {
-    right: 200px;
+    right: 150px;
+    top: 100px;
   }
 }
 
@@ -610,6 +611,12 @@ body .lightbox-modal .left-side {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .lightbox-modal .left-side {
+    top: 35%;
+  }
+}
+
 body .lightbox-modal .right-side {
   position: absolute;
   top: 50%;
@@ -628,6 +635,12 @@ body .lightbox-modal .right-side {
 @media (max-width: 767px) {
   body .lightbox-modal .right-side {
     right: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .lightbox-modal .right-side {
+    top: 35%;
   }
 }
 

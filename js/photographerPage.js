@@ -124,13 +124,14 @@ galleryLink.forEach(element=>{
   element.addEventListener('click', (event)=>{
     lightBox.style.display="block";
     const idItem=element.getAttribute("data-id");
-    const itemElt=dataJson.media.find(x=>x.id==idItem);
+    const itemElt=phototgrapherMedia.find(x=>x.id==idItem);
     let type= "image";
     typeof itemElt.image==="undefined"?type="video":type="image";
     while(containerItem.firstChild){
       containerItem.firstChild.remove();
     }
     const item=new mediaFactory(itemElt,type);
+    item.setAttribute("data-id",idItem);
     if(type==="video"){
       item.setAttribute("controls","");
       item.setAttribute("autoplay","");
@@ -145,4 +146,55 @@ galleryLink.forEach(element=>{
 const close=document.querySelector('.close-lightBox');
 close.addEventListener('click', ()=>{
   lightBox.style.display="none";
-})
+});
+btnNext.addEventListener("click",()=>{
+  const eleMedia=document.querySelector('.media-Item');
+  const getIDMedia=eleMedia.getAttribute('data-id');
+  let getIndexEle=phototgrapherMedia.indexOf(phototgrapherMedia.find(x=>x.id==getIDMedia));
+  if(getIndexEle>=0 && getIndexEle<phototgrapherMedia.length-1){
+    getIndexEle++;
+  }else{
+    getIndexEle=0;
+  }
+    const newElt=phototgrapherMedia[getIndexEle];
+      btnNext.style.pointerEvents="auto";
+      while(containerItem.firstChild){
+        containerItem.firstChild.remove();
+      }
+    let type="image";
+    typeof newElt.image==="undefined"?type="video":type="image";
+    const item=new mediaFactory(newElt,type);
+    item.setAttribute("data-id", newElt.id);
+    if(type==="video"){
+      item.setAttribute("controls","");
+      item.setAttribute("autoplay","");
+    }
+    item.classList.add("media-Item");
+    containerItem.appendChild(item);
+});
+btnPrivous.addEventListener("click",()=>{
+  const eleMedia=document.querySelector('.media-Item');
+  const getIDMedia=eleMedia.getAttribute('data-id');
+  let getIndexEle=phototgrapherMedia.indexOf(phototgrapherMedia.find(x=>x.id==getIDMedia));
+  if(getIndexEle>0 && getIndexEle<=phototgrapherMedia.length-1){
+    getIndexEle--;
+  }else{
+    getIndexEle=phototgrapherMedia.length;
+    getIndexEle--;
+  }
+    const newElt=phototgrapherMedia[getIndexEle];
+      btnNext.style.pointerEvents="auto";
+      while(containerItem.firstChild){
+        containerItem.firstChild.remove();
+      }
+    let type="image";
+    typeof newElt.image==="undefined"?type="video":type="image";
+    const item=new mediaFactory(newElt,type);
+    item.setAttribute("data-id", newElt.id);
+    if(type==="video"){
+      item.setAttribute("controls","");
+      item.setAttribute("autoplay","");
+    }
+    item.classList.add("media-Item");
+    containerItem.appendChild(item);
+});

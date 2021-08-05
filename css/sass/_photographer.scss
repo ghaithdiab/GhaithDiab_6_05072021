@@ -325,7 +325,8 @@ body{
         cursor: pointer;
         z-index: 2;
         @include tablet{
-          right: 200px;
+          right: 150px;
+          top: 100px;
         }
         @include mobile{
           top: 34%;
@@ -385,6 +386,9 @@ body{
         @include mobile{
           left: 10px;
         }
+        @include tablet{
+          top: 35%;
+        }
       }
       .right-side{
         position: absolute;
@@ -401,6 +405,9 @@ body{
         cursor: pointer;
         @include mobile{
           right: 10px;
+        }
+        @include tablet{
+          top: 35%;
         }
       }
     }
