@@ -121,7 +121,7 @@ const btnNext=document.querySelector(".right-side");
 const btnPrivous=document.querySelector(".left-side");
 
 galleryLink.forEach(element=>{
-  element.addEventListener('click', (event)=>{
+  element.addEventListener('click', ()=>{
     lightBox.style.display="block";
     const idItem=element.getAttribute("data-id");
     const itemElt=phototgrapherMedia.find(x=>x.id==idItem);
@@ -188,7 +188,7 @@ btnPrivous.addEventListener("click",()=>{
         containerItem.firstChild.remove();
       }
     let type="image";
-    typeof newElt.image==="undefined"?type="video":type="image";
+    typeof newElt.image==="undefined" ? type="video" :type="image";
     const item=new mediaFactory(newElt,type);
     item.setAttribute("data-id", newElt.id);
     if(type==="video"){

@@ -1,16 +1,16 @@
 import {creatEltWithClassName,creatimgElt,creatLinkElt} from './createElt.js';
 class photographerElt{
-  constructor(idPhotographer,photoId,name,country,city,tageLine,price,tags){
-    this.idPhotographer=idPhotographer;
-    this.photoId=photoId;
-    this.name=name;
-    this.country=country;
-    this.city=city;
-    this.tageLine=tageLine;
-    this.price=price;
-    this.tags=tags;
+  constructor(props){
+    this.idPhotographer=props.id;
+    this.photoId=`./media/PhotographersIDPhotos/${props.portrait}`;
+    this.name=props.name;
+    this.country=props.country;
+    this.city=props.city;
+    this.tageLine=props.tagline;
+    this.price=props.price;
+    this.tags=props.tags;
   }
-  buildPhotographerElt(){
+  buildPhotographerElt=()=>{
     const sectionPhotographer=document.querySelector(".photographes");
 
     const artPhotographer= creatEltWithClassName("article","photographer");
