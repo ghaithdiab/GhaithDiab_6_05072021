@@ -327,7 +327,7 @@ body{
         right: 20%;
         width: 20px;
         height: 20px;
-        background: url("GHAITHDIAB_06_05072021/media/times-solid.svg") no-repeat center/cover;
+        background: url("/media/timesSolid.svg") no-repeat center/cover;
         cursor: pointer;
         z-index: 2;
         @include tablet{
@@ -387,7 +387,7 @@ body{
         font-weight: 700;
         width: 20px;
         height: 20px;
-        background: url("/media/chevron-left-solid.svg") no-repeat center /cover;
+        background: url("/media/chevronleftsolid.svg") no-repeat center /cover;
         cursor: pointer;
         @include mobile{
           left: 10px;
@@ -407,7 +407,7 @@ body{
         font-weight: 700;
         width: 20px;
         height: 20px;
-        background: url("/media/chevron-right-solid.svg") no-repeat center /cover;
+        background: url("/media/chevronrightsolid.svg") no-repeat center /cover;
         cursor: pointer;
         @include mobile{
           right: 10px;
