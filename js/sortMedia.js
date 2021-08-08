@@ -1,3 +1,8 @@
+/*
+* class to sort media by Date
+*
+*@return {Array} Array of media sort it by Date
+*/
 class sortByDate{
   constructor(props){
     this.props=props;
@@ -9,6 +14,11 @@ class sortByDate{
     return this.props
   }
 }
+/*
+* class to sort media by title
+*
+*@return {Array} Array of media sort it by title
+*/
 class sortByTitre{
   constructor(props){
     this.props=props;
@@ -16,6 +26,11 @@ class sortByTitre{
     return this.props;
   }
 }
+/*
+* class to sort media by number of likes
+*
+*@return {Array} Array of media sort it by numbers of likes
+*/
 class sortByPopularite{
   constructor(props){
     this.props=props;
@@ -27,6 +42,11 @@ class sortByPopularite{
     return this.props;
   }
 }
+/*
+* factory order 
+*
+*@return {Array} array order it by which user select 
+*/
 class factoryOrder{
   constructor(orderby,props){
     this.props=props;

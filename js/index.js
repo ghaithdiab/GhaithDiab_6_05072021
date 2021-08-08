@@ -1,36 +1,42 @@
-import { getPhotographers } from "./filterForTags.js";
+import { getPhotographers,getphotographerElt } from "./filterForTags.js";
 import photographerElt from "./PhotographerElt.js";
-let tagsSelected= new Array();
+
+/*
+* build section photographers depending which tags selected
+*
+* @param{array} every element in the array is photographer data has the tags selected 
+*
+* @return {void}
+*/
 
 const buildSectionElt=(arr)=>{
     const sectionPhotographer= document.querySelector(".photographes");
     while(sectionPhotographer.firstChild){
-        sectionPhotographer.firstChild.remove();
+    sectionPhotographer.firstChild.remove();
     }
     arr.forEach(element => {
-        let createphoto=new photographerElt(element);
-        createphoto.buildPhotographerElt();
+    let createphoto=new photographerElt(element);
+    createphoto.buildPhotographerElt();
     });
 };
+/*
+* call the function on load 
+*/
 buildSectionElt(getPhotographers());
-const listTags=document.querySelectorAll(".tags-item");
-document.querySelector(".tags").onclick=(event)=>{
-    const name = event.target.dataset.name;
-    if(event.target.className==="tags-item"){
-        listTags.forEach(element=>{
-            element.classList.remove("selected");
-        });
-        event.target.classList.add("selected");
-        tagsSelected.pop();
-        tagsSelected.push(name);
-        buildSectionElt(getPhotographers());
-    }else{
-        event.target.classList.remove("selected");
-        tagsSelected.splice(tagsSelected.indexOf(name),1);
-        buildSectionElt(getPhotographers());
-    }
-};
 
+/*
+* call the function that filter photographer has the tags selected
+*/
+document.querySelector(".tags").onclick=getphotographerElt;
+const linkTags=document.querySelectorAll("linkTags");
+linkTags.forEach(element=>{
+    element.addEventListener("click",getphotographerElt);
+})
+
+/*
+* display the scrollup button when scrolling down
+*  @return {void}
+*/
 const scrollUp=document.querySelector(".scroll-up");
 
 
@@ -41,6 +47,10 @@ const scrollFunction=()=>{
         scrollUp.style.display="none";
     }
 };
+/*
+* scroll page to top 
+* @return {void}
+*/
 const topfunction=()=>{
     document.body.scrollTop=0;
     document.documentElement.scrollTop=0;
@@ -50,6 +60,5 @@ scrollUp.addEventListener("click",(e)=>{e.preventDefault();topfunction();});
 
 
 
-
-export {tagsSelected};
+export {buildSectionElt};
 

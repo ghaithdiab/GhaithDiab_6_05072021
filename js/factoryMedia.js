@@ -1,4 +1,11 @@
 import {creatimgElt,creatVideoElt} from './createElt.js'
+/*
+* creat image elemnte 
+*
+*@params{object} object media 
+*
+*@return{element} image element
+*/
 class imageFactory{
   constructor(props){
     this.src=props.image;
@@ -7,6 +14,13 @@ class imageFactory{
     return this.elt;
   }
 }
+/*
+* creat video elemnte 
+*
+*@params{object} object media 
+*
+*@return{element} viedo element
+*/
 class videoFactory{
   constructor(props){
     this.src=props.video;
@@ -14,7 +28,15 @@ class videoFactory{
     return this.elt;
   }
 }
-
+/*
+* factory media
+*
+*@params{object } object media  
+* 
+*@params{type} type of media
+*
+*@return{element} media element
+*/
 class mediaFactory{
   constructor(props,type){
     this.src=props.image;

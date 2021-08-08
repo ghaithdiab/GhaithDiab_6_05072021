@@ -23,5 +23,11 @@
   border-color: $primaire;
   color: #fff;
 }
-
+.linkTags{
+  color: $primaire;
+  text-decoration: none;
+  &:hover{
+    color: #fff;
+  }
+}
 }

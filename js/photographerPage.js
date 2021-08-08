@@ -3,10 +3,17 @@ import {creatEltWithClassName,creatimgElt,creatLinkElt,creatVideoElt} from './cr
 import factoryOrder from "./sortMedia.js";
 import buildGalleryItem from "./buildGalleryItem.js";
 import mediaFactory from "./factoryMedia.js";
-
+import likeCounter from "./likes.js";
+import { form } from "./form.js";
+  // put the id of photographer Selected in URL
   const url=new URL(window.location.href);
   const idphotographer=url.searchParams.get("id");
   const photographer=dataJson.photographers.find(x=>x.id==idphotographer);
+  /*
+  * take information photographer from json file and assigne it to DOM
+  *
+  * @return {void}
+  */
 const getPhotographerInfo=()=>{
   document.querySelector('.photographer-name').innerText=photographer.name;
   document.querySelector('.city').innerText=`${photographer.city},${photographer.country}`;
@@ -23,7 +30,11 @@ const getPhotographerInfo=()=>{
 }
 
 window.onload=getPhotographerInfo();
+
+// Array of media of photographer
 const phototgrapherMedia=dataJson.media.filter(x=>x.photographerId==idphotographer);
+
+// creat DOM elements for media photographer
 const media=new factoryOrder("Popularité",phototgrapherMedia);
 media.forEach(element => {
   let type= "image";
@@ -33,15 +44,18 @@ media.forEach(element => {
   new buildGalleryItem(element,type).buildItem();
 });
 
+
 const orderbtn=document.querySelector('.sort-btn');
 const orderByList=document.querySelector('.sort-list');
+
+// show /hide listbox on click
 orderbtn.addEventListener('click', ()=>{
   if(orderByList.style.display==="none"){
     orderbtn.style.display="none";
     orderByList.style.display="block";
   }
 });
-
+// rebuild gallary media after user select order
 orderByList.onclick=(event)=>{
   const btnText=document.querySelector('.btn-text');
   orderByList.style.display="none";
@@ -60,60 +74,22 @@ orderByList.onclick=(event)=>{
       type="video";
     }
     new buildGalleryItem(element,type).buildItem();
-  })
-  
+  });
+  likeCounter();
 }
 
 
-const totalLikes=document.querySelector('.total-likes');
-const likebtn=document.querySelectorAll('.likes');
+
 const price=document.querySelector('.price');
-let likesSum=0;
-phototgrapherMedia.forEach(element=>{
-  likesSum+=element.likes;
-});
-totalLikes.innerText=likesSum;
 
+window.onload=likeCounter();
 
-likebtn.forEach(element=>{
-  element.addEventListener('click',()=>{
-    let mediaID=element.dataset.id;
-    const mediaElt=dataJson.media.find(x=>x.id==mediaID);
-    mediaElt.likes++;
-    totalLikes.innerText++;
-    element.previousSibling.innerText=mediaElt.likes;
-  })
-})
+// add the price to DOM 
 price.innerText=`${photographer.price}€/jour`;
 /////////form
-const formModal=document.querySelector('.bground');
-const btnContact=document.querySelector(".btn");
-const btnClose=document.querySelector('.close-btn');
-btnContact.addEventListener('click',()=>{
-  formModal.style.display="block";
-})
-btnClose.addEventListener('click',()=>{
-  formModal.style.display="none";
-})
-
-const namePhotographer=document.querySelector('.name-cotact');
-namePhotographer.innerText=`Contactez-moi ${photographer.name}`;
-
-const allInput=document.querySelectorAll('input');
-const textMessage=document.querySelector("textarea");
-const btnSend=document.querySelector('.btn-submit');
-btnSend.addEventListener('click',(e)=>{
-  e.preventDefault();
-  console.log(`Prénom : ${allInput[0].value}`);
-  console.log(`Nom : ${allInput[1].value}`);
-  console.log(`Email : ${allInput[2].value}`);
-  console.log(`Message : ${textMessage.value}`);
-  formModal.style.display="none";
-})
-
+window.onload=form();
 // light box
 
-const galleryItem=document.querySelectorAll('.item');
 const galleryLink=document.querySelectorAll('.linksourc');
 const lightBox=document.querySelector('#lightBox-modal');
 const containerItem=document.querySelector('.container-gallery');
@@ -147,7 +123,7 @@ const close=document.querySelector('.close-lightBox');
 close.addEventListener('click', ()=>{
   lightBox.style.display="none";
 });
-btnNext.addEventListener("click",()=>{
+const NextItem=()=>{
   const eleMedia=document.querySelector('.media-Item');
   const getIDMedia=eleMedia.getAttribute('data-id');
   let getIndexEle=phototgrapherMedia.indexOf(phototgrapherMedia.find(x=>x.id==getIDMedia));
@@ -171,7 +147,13 @@ btnNext.addEventListener("click",()=>{
     }
     item.classList.add("media-Item");
     containerItem.appendChild(item);
-});
+}
+btnNext.addEventListener("click",NextItem);
+btnNext.addEventListener("Keydown",(e)=>{
+  if(e.key=="ArrowRight"){
+    NextItem;
+  }
+})
 btnPrivous.addEventListener("click",()=>{
   const eleMedia=document.querySelector('.media-Item');
   const getIDMedia=eleMedia.getAttribute('data-id');
@@ -198,3 +180,4 @@ btnPrivous.addEventListener("click",()=>{
     item.classList.add("media-Item");
     containerItem.appendChild(item);
 });
+export {phototgrapherMedia,photographer} ;

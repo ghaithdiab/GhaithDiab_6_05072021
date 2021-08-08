@@ -33,6 +33,15 @@
   color: #fff;
 }
 
+.tags-item .linkTags {
+  color: #901c1c;
+  text-decoration: none;
+}
+
+.tags-item .linkTags:hover {
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -164,7 +173,7 @@ body main {
 
 body main .heading {
   position: absolute;
-  left: 1100px;
+  left: 1150px;
   top: 55px;
   font-size: 20px;
   color: #901c1c;
