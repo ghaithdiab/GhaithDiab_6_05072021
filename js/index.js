@@ -1,7 +1,12 @@
 import dataJson from "./fetchData.js";
 import {filterTags ,styleTags} from "./filterForTags.js";
 import photographerElt from "./PhotographerElt.js";
-
+/*
+* recover photographer in json file and check path if there is tag selected to filter it
+*
+*@return {void}
+*
+*/
 const getPhotographers=()=>{
     dataJson.photographers.forEach(element => {
         const createphotographer=new photographerElt(element);
@@ -30,8 +35,11 @@ const getPhotographers=()=>{
         styleTags();
     }
 };
+//call function
 getPhotographers();
 
+
+// add event click in all link tags in the page
 const tagsItem=document.querySelectorAll(".linkTags");
 tagsItem.forEach(element=>{
     element.addEventListener("click",(e)=>filterTags(e,element));

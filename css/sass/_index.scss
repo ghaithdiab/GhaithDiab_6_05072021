@@ -6,11 +6,11 @@
 }
 body{
   font-family: DM Sans, sans-serif;
-    width: 95%;
+    width: 100%;
     margin: auto;
   .banner{
     width: 1000px;
-    padding: 40px 0px 40px 40px;
+    padding: 40px 0px 40px 120px;
     display: flex;
     justify-content: space-between;
     align-items:center;
@@ -20,6 +20,7 @@ body{
       padding: 40px 25px;
     }
     @include tablet{
+      padding: 40px 0px 40px 40px;
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
@@ -77,9 +78,9 @@ body{
       margin: auto;
     .heading{
       position: absolute;
-      left: 1150px;
-      top:55px;
-      font-size:20px;
+      left: 1080px;
+      top:45px;
+      font-size:36px;
       color: $primaire;
       font-weight: 100;
       @include mobile{
@@ -88,7 +89,8 @@ body{
         top: 50px;
       }
       @include tablet{
-        left: 70%;
+        font-size: 15px;
+        left: 75%;
         top: 50px;
       }
     }
@@ -101,7 +103,7 @@ body{
       .photographer{
         width: calc(100% / 3);
         text-align: center;
-        padding-top: 30px;
+        padding-top: 50px;
         @include mobile{
           width: auto;
         }

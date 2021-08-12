@@ -58,8 +58,16 @@ orderbtn.addEventListener('click', ()=>{
     orderByList.style.display="block";
   }
 });
-// rebuild gallary media after user select order
-orderByList.onclick=(event)=>{
+orderByList.addEventListener("keydown",(e)=>{
+  const keyCode=e.keyCode ? e.keyCode : e.which;
+  if(keyCode===27){
+    orderByList.style.display="none";
+    orderbtn.style.display="flex"; 
+  }else if(keyCode===13){
+    build(e);
+  }
+})
+const build=(event)=>{
   const btnText=document.querySelector('.btn-text');
   orderByList.style.display="none";
   let orderSelected=event.target.dataset.order;
@@ -87,6 +95,8 @@ orderByList.onclick=(event)=>{
     });
   });
 }
+// rebuild gallary media after user select order
+orderByList.onclick=(event)=>build(event);
 
 
 

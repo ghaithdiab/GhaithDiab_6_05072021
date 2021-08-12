@@ -9,7 +9,7 @@
   color: $primaire;
   font-weight: 500;
   @include mobile{
-    margin-top: 8px;
+    margin-bottom: 15px;
   }
 .linkTags{
   color: $primaire;
@@ -18,6 +18,7 @@
   border: .5px solid #C4C4C4;
   border-radius: 11px;
   width: 100%;
+
   &:hover{
     background-color: $primaire;
     color: #fff;

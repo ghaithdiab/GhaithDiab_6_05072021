@@ -418,7 +418,6 @@ body{
           font-weight: 700;
           width: 20px;
           height: 20px;
-          background: url("/media/chevronleftsolid.svg") no-repeat center /cover;
           cursor: pointer;
           @include mobile{
             left: 10px;
@@ -438,7 +437,6 @@ body{
           font-weight: 700;
           width: 20px;
           height: 20px;
-          background: url("/media/chevronrightsolid.svg") no-repeat center /cover;
           cursor: pointer;
           @include mobile{
             right: 10px;

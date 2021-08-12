@@ -15,7 +15,7 @@
 
 @media (max-width: 767px) {
   .tags-item {
-    margin-top: 8px;
+    margin-bottom: 15px;
   }
 }
 
@@ -52,13 +52,13 @@
 
 body {
   font-family: DM Sans, sans-serif;
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
 body .banner {
   width: 1000px;
-  padding: 40px 0px 40px 40px;
+  padding: 40px 0px 40px 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,6 +81,7 @@ body .banner {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body .banner {
+    padding: 40px 0px 40px 40px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -174,9 +175,9 @@ body main {
 
 body main .heading {
   position: absolute;
-  left: 1150px;
-  top: 55px;
-  font-size: 20px;
+  left: 1080px;
+  top: 45px;
+  font-size: 36px;
   color: #901c1c;
   font-weight: 100;
 }
@@ -191,7 +192,8 @@ body main .heading {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body main .heading {
-    left: 70%;
+    font-size: 15px;
+    left: 75%;
     top: 50px;
   }
 }
@@ -214,7 +216,7 @@ body main .photographes {
 body main .photographes .photographer {
   width: calc(100% / 3);
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 @media (max-width: 767px) {

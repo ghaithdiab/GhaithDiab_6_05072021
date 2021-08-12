@@ -1,5 +1,9 @@
 
-
+/*
+* apply style on tags selected
+*
+*@return{void}
+*/
 const styleTags=()=>{
     const tagsItem=document.querySelectorAll(".linkTags");
     tagsItem.forEach(ele=>{
@@ -8,7 +12,14 @@ const styleTags=()=>{
         tagselected===ele.innerHTML.substr(1).toLowerCase()?ele.classList.add("selected"):ele.classList.remove("selected");
     })
 }
-
+/*
+* filter tags (show/hide photographer depending tags selected)
+*
+*@param{e} event handler 
+*@param{element} tag element has clicked
+*
+*@return{void}
+*/
 const filterTags=(e,element)=>{
     e.preventDefault();
         const str=`${element.innerHTML.toLowerCase()}`;
