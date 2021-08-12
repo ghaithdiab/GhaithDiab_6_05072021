@@ -10,11 +10,11 @@
 </head>
 <body>
   <header class="banner">
-    <a href="index.html" title="HomePage"><img src="./media/logo/logo.png" alt="Fisheye Home page" class="logo" role="logo"></a>
+    <a href="index.html" title="HomePage" tabindex="1"><img src="./media/logo/logo.png" alt="Fisheye Home page" class="logo" role="logo"></a>
   </header>
-  <main>
-    <section class="photographer-header">
-      <div class="photographer-profile">
+  <main aria-hidden="false">
+    <section class="photographer-header" aria-labelledby="photographer-profile">
+      <div class="photographer-profile" aria-hidden="true">
         <h1 class="photographer-name"></h1>
         <p class="info">
           <span class="city"></span>
@@ -24,20 +24,20 @@
         </ul>
       </div>
       <button class="btn" aria-label="contactez-moi">Contactez-moi</button>
-      <div class="bground" role="background">
-        <div class="content" role="content">
-        <button aria-label="close contact form" class="close-btn">X</button>
+      <div class="bground" role="background" aria-hidden="true" aria-describedby="FormContact">
+        <div class="content" role="group" aria-labelledby="coordonnees">
+        <button aria-label="closeContactForm" class="close-btn">X</button>
         <form name="contact" action="index.html" method="get">
           <h1 class="name-cotact"></h1>
             <label for="first" aria-labelledby="firstNamelabel">Prénom</label><br>
-            <input class="text-first" type="text" id="first" name="first name"/><br>
+            <input class="text-first" type="text" id="first" name="first name" aria-labelledby="Prénom"/><br>
             <label for="last" aria-labelledby="secondNamelabel">Nom</label><br>
-            <input class="text-secound" type="text" id="last" name="last name"/><br>
+            <input class="text-secound" type="text" id="last" name="last name" aria-labelledby="Nom"/><br>
             <label for="email" aria-labelledby="emailLabel">E-mail</label><br>
-            <input class="text-email" type="email" id="email" name="Email"/><br>
+            <input class="text-email" type="email" id="email" name="Email" aria-labelledby="Email"/><br>
             <label for="message" aria-labelledby="messageLabel">Votre message</label><br>
-            <textarea name="Your Message" id="message" rows="5" cols="33"></textarea>
-          <button aria-label="send" class="btn-submit">Envoyer</button>
+            <textarea name="Your Message" id="message" rows="5" cols="33" aria-labelledby="message"></textarea>
+            <button aria-label="send" class="btn-submit" type="submit">Envoyer</button>
         </form>
       </div>
       </div>
@@ -58,20 +58,20 @@
     </div>
     <section class="gallery">
     </section>
-    <div class="lightbox-modal" id="lightBox-modal" role="lightbox">
-      <button class="close-lightBox"></button>
-      <div class="container-gallery">
-        <p class="title"></p>
-      </div>
-      <button class="left-side"></button>
-      <button class="right-side"></button>
-    </div>
     <aside class="data">
       <span class="total-likes">680</span>
-      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#901c1c" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart"  class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#901c1c" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
       <span class="price">400€/jour</span>
     </aside>
   </main>
+  <div class="lightbox-modal" id="lightBox-modal" role="dialog" aria-hidden="true" aria-describedby="navgationBetweenMedia">
+    <button class="close-lightBox" aria-label="close-dialog"></button>
+    <div class="container-gallery" aria-label="Media gallery">
+      <p class="title"></p>
+    </div>
+    <button class="left-side" aria-label="previous-Item"></button>
+    <button class="right-side" aria-label="Next-Item"></button>
+  </div>
   <script src="./js/photographerPage.js" type="module"></script>
 </body>
 </html>

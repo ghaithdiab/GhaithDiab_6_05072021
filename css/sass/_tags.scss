@@ -1,7 +1,5 @@
 
 .tags-item{
-  padding: 3px 5px;
-  border: .5px solid #C4C4C4;
   border-radius: 11px;
   margin-right: 10px;
   list-style: none;
@@ -13,21 +11,24 @@
   @include mobile{
     margin-top: 8px;
   }
+.linkTags{
+  color: $primaire;
+  text-decoration: none;
+  padding: 3px 5px;
+  border: .5px solid #C4C4C4;
+  border-radius: 11px;
+  width: 100%;
+  &:hover{
+    background-color: $primaire;
+    color: #fff;
+  }
   &.selected{
     background: $primaire;
     border-color: $primaire;
     color: #fff;
-  }
-&:hover{
-  background: $primaire;
-  border-color: $primaire;
-  color: #fff;
-}
-.linkTags{
-  color: $primaire;
-  text-decoration: none;
-  &:hover{
-    color: #fff;
+    .linkTags{
+      color: #fff;
+    }
   }
 }
 }

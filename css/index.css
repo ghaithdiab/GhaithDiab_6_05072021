@@ -3,8 +3,6 @@
 /*------start mixin breaking points---------*/
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 .tags-item {
-  padding: 3px 5px;
-  border: .5px solid #C4C4C4;
   border-radius: 11px;
   margin-right: 10px;
   list-style: none;
@@ -21,24 +19,27 @@
   }
 }
 
-.tags-item.selected {
-  background: #901c1c;
-  border-color: #901c1c;
-  color: #fff;
-}
-
-.tags-item:hover {
-  background: #901c1c;
-  border-color: #901c1c;
-  color: #fff;
-}
-
 .tags-item .linkTags {
   color: #901c1c;
   text-decoration: none;
+  padding: 3px 5px;
+  border: .5px solid #C4C4C4;
+  border-radius: 11px;
+  width: 100%;
 }
 
 .tags-item .linkTags:hover {
+  background-color: #901c1c;
+  color: #fff;
+}
+
+.tags-item .linkTags.selected {
+  background: #901c1c;
+  border-color: #901c1c;
+  color: #fff;
+}
+
+.tags-item .linkTags.selected .linkTags {
   color: #fff;
 }
 

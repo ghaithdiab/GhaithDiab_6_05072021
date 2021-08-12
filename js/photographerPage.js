@@ -2,9 +2,10 @@ import dataJson from "./fetchData.js";
 import {creatEltWithClassName,creatimgElt,creatLinkElt,creatVideoElt} from './createElt.js';
 import factoryOrder from "./sortMedia.js";
 import buildGalleryItem from "./buildGalleryItem.js";
-import mediaFactory from "./factoryMedia.js";
 import likeCounter from "./likes.js";
 import { form } from "./form.js";
+import { openGallery ,closeLightBox,NextItem,PrivousItem} from "./lightBox.js";
+
   // put the id of photographer Selected in URL
   const url=new URL(window.location.href);
   const idphotographer=url.searchParams.get("id");
@@ -22,7 +23,9 @@ const getPhotographerInfo=()=>{
   photographer.tags.forEach(element => {
     const tagItem=creatEltWithClassName("li","tags-item");
     tags.appendChild(tagItem);
-    tagItem.innerText=`#${element}`;
+    const linkTags=creatLinkElt(`index.html?tag=${element}`,"linkTags");
+      tagItem.appendChild(linkTags);
+      linkTags.innerText=`#${element}`;
   });
   const imgPhotographer=document.querySelector('.user');
   imgPhotographer.setAttribute("src",`./media/PhotographersIDPhotos/${photographer.portrait}`);
@@ -76,6 +79,13 @@ orderByList.onclick=(event)=>{
     new buildGalleryItem(element,type).buildItem();
   });
   likeCounter();
+  const galleryLink=document.querySelectorAll('.linksourc');
+
+  galleryLink.forEach(element=>{
+    element.addEventListener("click",()=>{
+      openGallery(element);
+    });
+  });
 }
 
 
@@ -90,94 +100,34 @@ price.innerText=`${photographer.price}€/jour`;
 window.onload=form();
 // light box
 
-const galleryLink=document.querySelectorAll('.linksourc');
+
 const lightBox=document.querySelector('#lightBox-modal');
 const containerItem=document.querySelector('.container-gallery');
 const btnNext=document.querySelector(".right-side");
 const btnPrivous=document.querySelector(".left-side");
+const main=document.querySelector("main");
+const close=document.querySelector('.close-lightBox');
+const galleryLink=document.querySelectorAll('.linksourc');
 
 galleryLink.forEach(element=>{
-  element.addEventListener('click', ()=>{
-    lightBox.style.display="block";
-    const idItem=element.getAttribute("data-id");
-    const itemElt=phototgrapherMedia.find(x=>x.id==idItem);
-    let type= "image";
-    typeof itemElt.image==="undefined"?type="video":type="image";
-    while(containerItem.firstChild){
-      containerItem.firstChild.remove();
-    }
-    const item=new mediaFactory(itemElt,type);
-    item.setAttribute("data-id",idItem);
-    if(type==="video"){
-      item.setAttribute("controls","");
-      item.setAttribute("autoplay","");
-    }
-    item.classList.add("media-Item");
-    containerItem.appendChild(item);
-    const titleItem=creatEltWithClassName("p","title");
-    containerItem.appendChild(titleItem);
-    titleItem.innerText=`${itemElt.title}`;
-  })
-})
-const close=document.querySelector('.close-lightBox');
-close.addEventListener('click', ()=>{
-  lightBox.style.display="none";
+  element.addEventListener("click",()=>{
+    openGallery(element);
+    buildSectionElt(element);
+  });
 });
-const NextItem=()=>{
-  const eleMedia=document.querySelector('.media-Item');
-  const getIDMedia=eleMedia.getAttribute('data-id');
-  let getIndexEle=phototgrapherMedia.indexOf(phototgrapherMedia.find(x=>x.id==getIDMedia));
-  if(getIndexEle>=0 && getIndexEle<phototgrapherMedia.length-1){
-    getIndexEle++;
-  }else{
-    getIndexEle=0;
-  }
-    const newElt=phototgrapherMedia[getIndexEle];
-      btnNext.style.pointerEvents="auto";
-      while(containerItem.firstChild){
-        containerItem.firstChild.remove();
-      }
-    let type="image";
-    typeof newElt.image==="undefined"?type="video":type="image";
-    const item=new mediaFactory(newElt,type);
-    item.setAttribute("data-id", newElt.id);
-    if(type==="video"){
-      item.setAttribute("controls","");
-      item.setAttribute("autoplay","");
-    }
-    item.classList.add("media-Item");
-    containerItem.appendChild(item);
-}
+close.addEventListener('click', closeLightBox);
+
+
+
+// const itemTage=document.querySelectorAll(".tags-item");
+// itemTage.forEach(element=>{
+//   element.addEventListener("click",()=>{
+//     location.href="index.html";
+//   })
+// })
+
+
 btnNext.addEventListener("click",NextItem);
-btnNext.addEventListener("Keydown",(e)=>{
-  if(e.key=="ArrowRight"){
-    NextItem;
-  }
-})
-btnPrivous.addEventListener("click",()=>{
-  const eleMedia=document.querySelector('.media-Item');
-  const getIDMedia=eleMedia.getAttribute('data-id');
-  let getIndexEle=phototgrapherMedia.indexOf(phototgrapherMedia.find(x=>x.id==getIDMedia));
-  if(getIndexEle>0 && getIndexEle<=phototgrapherMedia.length-1){
-    getIndexEle--;
-  }else{
-    getIndexEle=phototgrapherMedia.length;
-    getIndexEle--;
-  }
-    const newElt=phototgrapherMedia[getIndexEle];
-      btnNext.style.pointerEvents="auto";
-      while(containerItem.firstChild){
-        containerItem.firstChild.remove();
-      }
-    let type="image";
-    typeof newElt.image==="undefined" ? type="video" :type="image";
-    const item=new mediaFactory(newElt,type);
-    item.setAttribute("data-id", newElt.id);
-    if(type==="video"){
-      item.setAttribute("controls","");
-      item.setAttribute("autoplay","");
-    }
-    item.classList.add("media-Item");
-    containerItem.appendChild(item);
-});
+
+btnPrivous.addEventListener("click",PrivousItem);
 export {phototgrapherMedia,photographer} ;

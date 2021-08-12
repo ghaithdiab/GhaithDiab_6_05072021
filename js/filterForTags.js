@@ -1,54 +1,46 @@
-import dataJson from "./fetchData.js";
-import {buildSectionElt} from "./index.js";
 
-let photograherToDisplay=new Array();
 
-let tagsSelected= new Array();
-/*
-* search in photographer tags 
-*
-*@return {array} contain the photographers has same tags selected by user 
-*/
-const getPhotographers=()=>{
-    photograherToDisplay=[];
-    
-    for(let i in dataJson.photographers){
-        if(tagsSelected.length==0){
-            photograherToDisplay.push(dataJson.photographers[i]);
-        }else if(tagsSelected.some(item=>dataJson.photographers[i].tags.includes(item))){
-            photograherToDisplay.push(dataJson.photographers[i]);
-        }
-    }
-    
-    return photograherToDisplay;
-};
-/*
-* adding style on tag selected and put it in array 
-* 
-*@ param{event} event handler to an element
-*
-* @return {void}
-*/
-const getphotographerElt=(event)=>{
-    const name = event.target.dataset.name;
-
-    const listTags=document.querySelectorAll(".tags-item");
-
-    if(event.target.className==="tags-item"){
-        listTags.forEach(element=>{
-            element.classList.remove("selected");
-        });
-
-        event.target.classList.add("selected");
-        tagsSelected.pop();
-        tagsSelected.push(name);
-        buildSectionElt(getPhotographers());
-    }else{
-
-        event.target.classList.remove("selected");
-        tagsSelected.splice(tagsSelected.indexOf(name),1);
-        buildSectionElt(getPhotographers());
-    } 
+const styleTags=()=>{
+    const tagsItem=document.querySelectorAll(".linkTags");
+    tagsItem.forEach(ele=>{
+        const url=new URL(window.location.href);
+        const tagselected=url.searchParams.get("tag");
+        tagselected===ele.innerHTML.substr(1).toLowerCase()?ele.classList.add("selected"):ele.classList.remove("selected");
+    })
 }
 
-export { getPhotographers,getphotographerElt};
+const filterTags=(e,element)=>{
+    e.preventDefault();
+        const str=`${element.innerHTML.toLowerCase()}`;
+        const url=new URL(window.location.href);
+        if(url.searchParams.get("tag")===str.substr(1)){
+            element.classList.remove("selected");
+            url.searchParams.delete("tag");
+            history.pushState(null,'',url);
+            const tagselected=url.searchParams.get("tag");
+            const art=document.querySelectorAll(".photographer");
+            if(tagselected===null){
+                art.forEach(ele=>{
+                    ele.style.display="block";
+                })
+            }
+            styleTags();
+        }else{
+            url.searchParams.set("tag",str.substr(1));
+            history.pushState(null,'',url);
+            const tagselected=url.searchParams.get("tag");
+            const art=document.querySelectorAll(".photographer");
+            art.forEach(ele=>{
+                const tags=ele.getAttribute("data-tags");
+                const arr=JSON.parse(tags);
+                if(arr.find(item=>tagselected.includes(item))){
+                    ele.style.display="block";
+                }else{
+                    ele.style.display="none";
+                }
+                
+            })
+            styleTags();
+        }
+}
+export {filterTags,styleTags};

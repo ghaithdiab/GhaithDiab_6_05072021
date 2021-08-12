@@ -1,4 +1,5 @@
 import {creatEltWithClassName,creatimgElt,creatLinkElt} from './createElt.js';
+import { filterTags } from './index.js';
 /*
 *
 * creat DOM elements for photographer that selected
@@ -21,6 +22,12 @@ class photographerElt{
     // creat article contain all elements photographer
     const artPhotographer= creatEltWithClassName("article","photographer");
     artPhotographer.setAttribute("role","photographer");
+    const arr=new Array();
+    this.tags.forEach(ele=>{
+      arr.push(`"${ele}"`);
+    })
+    artPhotographer.setAttribute("data-tags",`[${arr}]`);
+
     sectionPhotographer.appendChild(artPhotographer);
 
     // creat link for photographer page contain photo and name
@@ -35,7 +42,7 @@ class photographerElt{
     NamePhotographer.innerText=this.name;
     linkPhotographer.appendChild(NamePhotographer);
     
-    // creat info elemnts 
+    // creat info elements 
     const infoPhotographer=creatEltWithClassName("p","info");
     artPhotographer.appendChild(infoPhotographer);
 
@@ -60,7 +67,7 @@ class photographerElt{
       const itemTagsPhotographer=creatEltWithClassName("li","tags-item");
       itemTagsPhotographer.setAttribute("data-name",element);
       ultagsPhotographer.appendChild(itemTagsPhotographer);
-      const linkTags=creatLinkElt("#index.html","linkTags");
+      const linkTags=creatLinkElt("#","linkTags");
       itemTagsPhotographer.appendChild(linkTags);
       linkTags.innerText=`#${element}`;
     });
