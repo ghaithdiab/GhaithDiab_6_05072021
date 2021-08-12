@@ -11,7 +11,7 @@ class sortByDate{
       const dateB=new Date(b.date);
       return dateB-dateA;
     });
-    return this.props
+    return this.props;
   }
 }
 /*
@@ -61,13 +61,13 @@ class factoryOrder{
       const arr=new sortByTitre(this.props);
       arr.forEach(element=>{
         this.media.push(element);
-      })
+      });
     }
     else{
       const arr=new sortByPopularite(this.props);
       arr.forEach(element=>{
         this.media.push(element);
-      })
+      });
     }
     return this.media;
   }

@@ -11,7 +11,7 @@ const creatEltWithClassName=(tageElt,className)=>{
   const elt=document.createElement(tageElt);
   elt.classList.add(className);
   return elt;
-}
+};
 
 /*
 * creat img element with class Name
@@ -30,7 +30,7 @@ const creatimgElt=(srcImg, altImg,className)=>{
   elt.setAttribute("alt", altImg);
   elt.classList.add(className);
   return elt;
-}
+};
 /*
 * creat anchor element  with class Name
 *
@@ -45,7 +45,7 @@ const creatLinkElt=(hrefLink,className)=>{
   elt.setAttribute("href",hrefLink);
   elt.classList.add(className);
   return elt;
-}
+};
 /*
 * creat video element  with class Name
 *
@@ -65,6 +65,6 @@ const creatVideoElt=(srcVideo,className)=>{
 
   elt.appendChild(sourcElt);
   return elt;
-}
+};
 
 export {creatEltWithClassName,creatimgElt,creatLinkElt,creatVideoElt};

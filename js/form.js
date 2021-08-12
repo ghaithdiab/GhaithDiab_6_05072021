@@ -5,16 +5,16 @@ import { photographer } from "./photographerPage.js";
 *@return{void}
 */
 const form=()=>{
-  const formModal=document.querySelector('.bground');
+  const formModal=document.querySelector(".bground");
   const btnContact=document.querySelector(".btn");
-  const btnClose=document.querySelector('.close-btn');
-  const allInput=document.querySelectorAll('input');
+  const btnClose=document.querySelector(".close-btn");
+  const allInput=document.querySelectorAll("input");
   const textMessage=document.querySelector("textarea");
   const main=document.querySelector("main");
 
 
   /**Open from dialog */
-  btnContact.addEventListener('click',()=>{
+  btnContact.addEventListener("click",()=>{
     formModal.style.display="block";
     formModal.setAttribute("aria-hidden","false");
     main.setAttribute("aria-hidden","true");
@@ -29,20 +29,20 @@ const form=()=>{
         formModal.style.display="none";
       }
     });
-    });
+  });
 
-    /**close form dialog */
-  btnClose.addEventListener('click',()=>{
+  /**close form dialog */
+  btnClose.addEventListener("click",()=>{
     formModal.style.display="none";
   });
 
-  const namePhotographer=document.querySelector('.name-cotact');
+  const namePhotographer=document.querySelector(".name-cotact");
   namePhotographer.innerText=`Contactez-moi ${photographer.name}`;
 
 
-  const btnSend=document.querySelector('.btn-submit');
+  const btnSend=document.querySelector(".btn-submit");
   /**print the data on the console */
-  btnSend.addEventListener('click',(e)=>{
+  btnSend.addEventListener("click",(e)=>{
     e.preventDefault();
     console.log(`Prénom : ${allInput[0].value}`);
     console.log(`Nom : ${allInput[1].value}`);
@@ -50,7 +50,7 @@ const form=()=>{
     console.log(`Message : ${textMessage.value}`);
     formModal.style.display="none";
     
-  })
-}
+  });
+};
 
 export {form};

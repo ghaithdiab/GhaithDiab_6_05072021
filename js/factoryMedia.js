@@ -1,4 +1,4 @@
-import {creatimgElt,creatVideoElt} from './createElt.js'
+import {creatimgElt,creatVideoElt} from "./createElt.js";
 /*
 * creat image elemnte 
 *

@@ -1,5 +1,4 @@
-import {creatEltWithClassName,creatimgElt,creatLinkElt} from './createElt.js';
-import { filterTags } from './index.js';
+import {creatEltWithClassName,creatimgElt,creatLinkElt} from "./createElt.js";
 /*
 *
 * creat DOM elements for photographer that selected
@@ -25,7 +24,7 @@ class photographerElt{
     const arr=new Array();
     this.tags.forEach(ele=>{
       arr.push(`"${ele}"`);
-    })
+    });
     artPhotographer.setAttribute("data-tags",`[${arr}]`);
 
     sectionPhotographer.appendChild(artPhotographer);

@@ -18,7 +18,7 @@ class buildGalleryItem{
   }
   buildItem=()=>{
     const section=document.querySelector(".gallery");
-    const galleryItem=creatEltWithClassName('div',"gallery-item");
+    const galleryItem=creatEltWithClassName("div","gallery-item");
 
     const linkItem= creatLinkElt("#lightBox-modal","linksourc");
     linkItem.setAttribute("data-id",this.id);
@@ -30,7 +30,7 @@ class buildGalleryItem{
     const media=new mediaFactory(this.props,this.type);
     linkItem.appendChild(media);
 
-    const infoMedia=creatEltWithClassName('div',"info-item");
+    const infoMedia=creatEltWithClassName("div","info-item");
     const titleMedia=creatEltWithClassName("h2","title");
     titleMedia.innerText= this.title;
 
