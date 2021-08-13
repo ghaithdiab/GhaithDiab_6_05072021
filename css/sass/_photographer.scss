@@ -315,7 +315,6 @@ body{
         height: 79px;
         background-color: #DB8876;
         display: flex;
-        // justify-content: space-between;
         border-top-right-radius:5px ;
         border-top-left-radius: 5px;
         @include mobile{
@@ -358,7 +357,6 @@ body{
           right: 20%;
           width: 20px;
           height: 20px;
-          background: url("/media/timesSolid.svg") no-repeat center/cover;
           cursor: pointer;
           z-index: 2;
           @include tablet{

@@ -576,7 +576,6 @@ body .lightbox-modal .close-lightBox {
   right: 20%;
   width: 20px;
   height: 20px;
-  background: url("/media/timesSolid.svg") no-repeat center/cover;
   cursor: pointer;
   z-index: 2;
 }

@@ -176,8 +176,8 @@ body main {
 body main .heading {
   position: absolute;
   left: 1080px;
-  top: 45px;
-  font-size: 36px;
+  top: 50px;
+  font-size: 30px;
   color: #901c1c;
   font-weight: 100;
 }
