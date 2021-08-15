@@ -24,18 +24,18 @@
         </ul>
       </div>
       <button class="btn" aria-label="contactez-moi">Contactez-moi</button>
-      <div class="bground" role="background" aria-hidden="true" aria-describedby="FormContact">
-        <div class="content" role="group" aria-labelledby="coordonnees">
+      <div class="bground" aria-hidden="true">
+        <div class="content">
         <button aria-label="closeContactForm" class="close-btn">X</button>
         <form name="contact" action="index.html" method="get">
           <h1 class="name-cotact"></h1>
-            <label for="first" aria-labelledby="firstNamelabel">Prénom</label><br>
-            <input class="text-first" type="text" id="first" name="first name" aria-labelledby="Prénom"/><br>
-            <label for="last" aria-labelledby="secondNamelabel">Nom</label><br>
-            <input class="text-secound" type="text" id="last" name="last name" aria-labelledby="Nom"/><br>
-            <label for="email" aria-labelledby="emailLabel">E-mail</label><br>
-            <input class="text-email" type="email" id="email" name="Email" aria-labelledby="Email"/><br>
-            <label for="message" aria-labelledby="messageLabel">Votre message</label><br>
+            <label for="first">Prénom</label><br>
+            <input class="text-first" type="text" id="first" name="first name"/><br>
+            <label for="last">Nom</label><br>
+            <input class="text-secound" type="text" id="last" name="last name"/><br>
+            <label for="email">E-mail</label><br>
+            <input class="text-email" type="email" id="email" name="Email"/><br>
+            <label for="message">Votre message</label><br>
             <textarea name="Your Message" id="message" rows="5" cols="33" aria-labelledby="message"></textarea>
             <button aria-label="send" class="btn-submit" type="submit">Envoyer</button>
         </form>
@@ -49,11 +49,11 @@
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
       </button>
       <ul class="sort-list" style="display: none;" role="listbox">
-        <li class="sort-item" data-order="Popularité" role="option" tabindex="0" aria-labelledby="sort-btn">Popularité
+        <li class="sort-item" data-order="Popularité" role="option" tabindex="0">Popularité
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg>
         </li>
-        <li class="sort-item" data-order="Date" role="option" tabindex="0" aria-labelledby="sort-btn">Date</li>
-        <li class="sort-item" data-order="Titre" role="option" tabindex="0" aria-labelledby="sort-btn">Titre</li>
+        <li class="sort-item" data-order="Date" role="option" tabindex="0">Date</li>
+        <li class="sort-item" data-order="Titre" role="option" tabindex="0">Titre</li>
       </ul>
     </div>
     <section class="gallery">
@@ -64,7 +64,7 @@
       <span class="price">400€/jour</span>
     </aside>
   </main>
-  <div class="lightbox-modal" id="lightBox-modal" role="dialog" aria-hidden="true" aria-describedby="navgationBetweenMedia">
+  <div class="lightbox-modal" id="lightBox-modal" role="dialog" aria-hidden="true">
     <button class="close-lightBox" aria-label="close-dialog">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="#901c1c" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
     </button>
