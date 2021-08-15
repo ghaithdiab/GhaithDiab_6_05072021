@@ -20,7 +20,7 @@ class photographerElt{
     const sectionPhotographer=document.querySelector(".photographes");
     // creat article contain all elements photographer
     const artPhotographer= creatEltWithClassName("article","photographer");
-    artPhotographer.setAttribute("role","photographer");
+    artPhotographer.setAttribute("aria-label","photographer");
     const arr=new Array();
     this.tags.forEach(ele=>{
       arr.push(`"${ele}"`);
@@ -32,9 +32,10 @@ class photographerElt{
     // creat link for photographer page contain photo and name
     const linkPhotographer=creatLinkElt(`photographer.html?id=${this.idPhotographer}`,"linkPhotographer");
     linkPhotographer.setAttribute("data-id",this.idPhotographer);
+    linkPhotographer.setAttribute("title",this.name);
     artPhotographer.appendChild(linkPhotographer);
 
-    const photoPhotographer=creatimgElt(this.photoId,this.name,"IdPhoto");
+    const photoPhotographer=creatimgElt(this.photoId,"","IdPhoto");
     linkPhotographer.appendChild(photoPhotographer);
 
     const NamePhotographer=creatEltWithClassName("h2","photographer-name");
@@ -67,6 +68,7 @@ class photographerElt{
       itemTagsPhotographer.setAttribute("data-name",element);
       ultagsPhotographer.appendChild(itemTagsPhotographer);
       const linkTags=creatLinkElt("#","linkTags");
+      linkTags.setAttribute("title",element);
       itemTagsPhotographer.appendChild(linkTags);
       linkTags.innerText=`#${element}`;
     });

@@ -2,7 +2,7 @@ import mediaFactory from "./factoryMedia.js";
 import { creatEltWithClassName ,creatLinkElt,creatimgElt} from "./createElt.js";
 
 /*
-* class to creat gallery media
+* class to create gallery media
 *
 *@params{mediaElt , type} type of media 
 *
@@ -14,6 +14,7 @@ class buildGalleryItem{
     this.type=type;
     this.like=props.likes;
     this.title=props.title;
+    this.alt=props.alt;
     this.id=props.id;
   }
   buildItem=()=>{
@@ -22,12 +23,15 @@ class buildGalleryItem{
 
     const linkItem= creatLinkElt("#lightBox-modal","linksourc");
     linkItem.setAttribute("data-id",this.id);
+    linkItem.setAttribute("title",`${this.title} ,closeup view`);
     section.appendChild(galleryItem);
     galleryItem.appendChild(linkItem);
 
     //factory media return or image or video
 
     const media=new mediaFactory(this.props,this.type);
+    media.setAttribute("role","button");
+    // media.setAttribute("aria-label","");
     linkItem.appendChild(media);
 
     const infoMedia=creatEltWithClassName("div","info-item");
@@ -35,6 +39,7 @@ class buildGalleryItem{
     titleMedia.innerText= this.title;
 
     const likeimage=creatimgElt("./media/heart-solid.svg", "likes", "likes");
+    likeimage.setAttribute("tabindex","0");
     likeimage.setAttribute("data-id",this.id);
     
     const numberOfLikes=creatEltWithClassName("span", "numberOflikes");

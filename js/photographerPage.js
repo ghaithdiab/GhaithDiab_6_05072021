@@ -6,7 +6,7 @@ import likeCounter from "./likes.js";
 import { form } from "./form.js";
 import { openGallery ,closeLightBox,NextItem,PrivousItem} from "./lightBox.js";
 
-// put the id of photographer Selected in URL
+// assign the id of photographer Selected in URL
 const url=new URL(window.location.href);
 const idphotographer=url.searchParams.get("id");
 const photographer=dataJson.photographers.find(x=>x.id==idphotographer);
@@ -24,6 +24,7 @@ const getPhotographerInfo=()=>{
     const tagItem=creatEltWithClassName("li","tags-item");
     tags.appendChild(tagItem);
     const linkTags=creatLinkElt(`index.html?tag=${element}`,"linkTags");
+    linkTags.setAttribute("title",element);
     tagItem.appendChild(linkTags);
     linkTags.innerText=`#${element}`;
   });
@@ -101,7 +102,7 @@ orderByList.onclick=(event)=>build(event);
 
 
 const price=document.querySelector(".price");
-
+// like function
 window.onload=likeCounter();
 
 // add the price to DOM 
@@ -124,17 +125,7 @@ galleryLink.forEach(element=>{
 });
 close.addEventListener("click", closeLightBox);
 
-
-
-// const itemTage=document.querySelectorAll(".tags-item");
-// itemTage.forEach(element=>{
-//   element.addEventListener("click",()=>{
-//     location.href="index.html";
-//   })
-// })
-
-
 btnNext.addEventListener("click",NextItem);
 
 btnPrivous.addEventListener("click",PrivousItem);
-export {phototgrapherMedia,photographer} ;
+export {phototgrapherMedia,photographer}; 

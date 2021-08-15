@@ -24,7 +24,10 @@ class imageFactory{
 class videoFactory{
   constructor(props){
     this.src=props.video;
+    this.title=props.title;
     this.elt=creatVideoElt(`./media/imges/${this.src}`, "item");
+    this.elt.append(`"${this.title}"`);
+    this.elt.setAttribute("aria-label","video");
     return this.elt;
   }
 }

@@ -49,7 +49,6 @@ const filterTags=(e,element)=>{
       }else{
         ele.style.display="none";
       }
-                
     });
     styleTags();
   }

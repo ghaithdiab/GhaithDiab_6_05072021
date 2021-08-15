@@ -1,6 +1,6 @@
 const readJson=async ()=>{
   try {
-    const response = await fetch('js/data.json');
+    const response = await fetch("js/data.json");
     if (!response.ok) {
       throw new Error("HTTP error" + response.status);
     }
@@ -9,7 +9,7 @@ const readJson=async ()=>{
   } catch (e) {
     this.dataError = true;
   }
-}
+};
 
 const dataJson=await readJson();
 
