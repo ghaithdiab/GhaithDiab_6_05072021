@@ -1,4 +1,3 @@
-import  {phototgrapherMedia}  from "./photographerPage.js";
 import dataJson from "./fetchData.js";
 
 /*
@@ -9,11 +8,6 @@ import dataJson from "./fetchData.js";
 const likeCounter=()=>{
   const totalLikes=document.querySelector(".total-likes");
   const likebtn=document.querySelectorAll(".likes");
-  let likesSum=0;
-  phototgrapherMedia.forEach(element=>{
-    likesSum+=element.likes;
-  });
-  totalLikes.innerText=likesSum;
 
 
   likebtn.forEach(element=>{

@@ -1,6 +1,6 @@
 import {creatimgElt,creatVideoElt} from "./createElt.js";
 /*
-* creat image elemnte 
+* create image element
 *
 *@params{object} object media 
 *
@@ -15,7 +15,7 @@ class imageFactory{
   }
 }
 /*
-* creat video elemnte 
+* create video element
 *
 *@params{object} object media 
 *
@@ -45,11 +45,9 @@ class mediaFactory{
     this.src=props.image;
     this.Vsrc=props.video;
     if(type==="image"){
-      const imageItem=new imageFactory(props);
-      return imageItem;
+      return new imageFactory(props);
     }else if(type==="video"){
-      const videoItem=new videoFactory(props);
-      return videoItem;
+      return new videoFactory(props);
     }
   }
 }

@@ -1,5 +1,5 @@
 /*
-* creat element with class Name
+* create element with class Name
 *
 * @params{tageElt} name of tag
 *
@@ -14,7 +14,7 @@ const creatEltWithClassName=(tageElt,className)=>{
 };
 
 /*
-* creat img element with class Name
+* create img element with class Name
 *
 * @params{srcImg} sourc of the image
 *
@@ -32,7 +32,7 @@ const creatimgElt=(srcImg, altImg,className)=>{
   return elt;
 };
 /*
-* creat anchor element  with class Name
+* create anchor element  with class Name
 *
 * @params{hrefLink} link of the elemnt
 *
@@ -47,7 +47,7 @@ const creatLinkElt=(hrefLink,className)=>{
   return elt;
 };
 /*
-* creat video element  with class Name
+* create video element  with class Name
 *
 * @params{srcVideo} path of video
 *
